@@ -1,18 +1,19 @@
-# Nome do projeto
+# Ataque Cibernético - G1
 
 Escreva um ou dois parágrafo resumindo o objetivo do seu projeto.
 
 ## Alunos integrantes da equipe
 
-* Nome completo do aluno 1
-* Nome completo do aluno 2
-* Nome completo do aluno 3
-* Nome completo do aluno 4
+* Gabriel Carvalho de Souza
+* Iago Henrique Lima
+* Gabriel Ferreira Pereira
+* João Vitor Pereria Guimarães
+* Guilherme Soares Silva 
 
 ## Professores responsáveis
 
-* Nome completo do professor 1
-* Nome completo do professor 2
+* Rommel
+* Luciana
 
 ## Instruções de utilização
 
