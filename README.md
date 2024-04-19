@@ -8,7 +8,8 @@ Escreva um ou dois parágrafo resumindo o objetivo do seu projeto.
 * Iago Henrique Lima
 * Gabriel Ferreira Pereira
 * João Vitor Pereria Guimarães
-* Guilherme Soares Silva 
+* Guilherme Soares Silva
+* Gustavo Henrique Silva Maciel
 
 ## Professores responsáveis
 
