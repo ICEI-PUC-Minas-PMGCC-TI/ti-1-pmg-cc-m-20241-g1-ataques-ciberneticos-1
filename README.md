@@ -21,14 +21,15 @@ podem se proteger.
 * Gabriel Carvalho de Souza
 * Iago Henrique Lima
 * Gabriel Ferreira Pereira
-* João Vitor Pereria Guimarães
 * Guilherme Soares Silva
 * Gustavo Henrique Silva Maciel
 
 ## Professores responsáveis
 
-* Rommel
-* Luciana
+* Rommel Vieira Carneiro
+* Pedro Henrique Ramos Costa
+* Luciana Mara Freitas Diniz
+* João Carlos Oliveira Caetano
 
 ## Instruções de utilização
 
