@@ -3,16 +3,16 @@ cff-version: 1.0.1
 message: Please cite this software using these metadata.
 title: 
 authors:
-  - family-names: 
-    given-names: 
-  - family-names: 
-    given-names: 
-  - family-names: 
-    given-names: 
-  - family-names: 
-    given-names: 
-  - family-names: 
-    given-names: 
+  - family-names: Gabriel 
+    given-names: Ferreira Pereira
+  - family-names: Iago 
+    given-names: Henrique lima Silva de Oliveira
+  - family-names: Gabriel
+    given-names:  Carvalho de Souza
+  - family-names: Gustavo 
+    given-names: Henrique Silva Maciel
+  - family-names: Guilherme 
+    given-names: Soares Silva
   - family-names: 
     given-names:
   - name-suffix: Professor
