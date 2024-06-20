@@ -19,7 +19,7 @@ podem se proteger.
 ## Alunos integrantes da equipe
 
 * Gabriel Carvalho de Souza
-* Iago Henrique Lima
+* Iago Henrique Lima Silva De Oliveira
 * Gabriel Ferreira Pereira
 * Guilherme Soares Silva
 * Gustavo Henrique Silva Maciel
