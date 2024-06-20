@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-br" dir="ltr">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Verificador de senha</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body class="Iago2">
+    <div class="custom-container">
+        <header>Verificador de senha</header>
+        <form action="#">
+            <div class="field-container">
+                <input onkeyup="validatePassword()" type="password" placeholder="Digite uma senha" />
+                <span class="showBtn">MOSTRAR</span>
+            </div>
+            <div class="strength-indicator">
+                <span class="weak"></span>
+                <span class="medium"></span>
+                <span class="strong"></span>
+            </div>
+            <div class="strength-text"></div>
+        </form>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
