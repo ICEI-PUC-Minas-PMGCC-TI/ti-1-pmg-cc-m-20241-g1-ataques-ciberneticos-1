@@ -90,7 +90,7 @@ function goToMainPage() {
 }
 
 function goToQuiz() {
-    window.location.href = "MalvertisingQuiz.html";
+    window.location.href = "MalvertisingQuiz.html"; //MODIFICAR
 }
 
 function startQuiz() {

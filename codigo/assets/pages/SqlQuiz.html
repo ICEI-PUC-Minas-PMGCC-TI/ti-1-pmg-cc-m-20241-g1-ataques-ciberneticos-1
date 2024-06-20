@@ -4,14 +4,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="../css/styleQuiz.css">
     <title>Quiz</title>
 </head>
 
 <body class="Iago3">
     <div class="quiz-container">
         <h2>Teste seu conhecimento</h2>
-        <h1>Quiz: <u>Ataques de Negação de Serviço</u></h1>
+        <h1>Quiz: <u>Injeção de SQL</u></h1>
         <button class="quiz-button" onclick="startQuiz()">Iniciar Quiz</button>
         <button class="quiz-button" onclick="goToMainPage()">Quero revisar o material</button>
     </div>
@@ -25,7 +25,8 @@
         <h2>Resultado do Quiz</h2>
         <p id="score"></p>
         <div id="message"></div>
-        <button id="retryButton" style="display: none;" class="quiz-button" onclick="goToQuiz()">Tentar Novamente</button>
+        <button id="retryButton" style="display: none;" class="quiz-button" onclick="goToQuiz()">Tentar
+            Novamente</button>
         <button id="homeButton" style="display: none;" class="quiz-button" onclick="goToMainPage()">Agora Não</button>
     </div>
 
@@ -34,7 +35,8 @@
         <button class="quiz-button" onclick="goToMainPage()">Voltar ao Início</button>
     </div>
 
-    <script src="script.js"></script>
+
+    <script src="../js/scriptSqlQuiz.js"></script>
 </body>
 
 </html>
