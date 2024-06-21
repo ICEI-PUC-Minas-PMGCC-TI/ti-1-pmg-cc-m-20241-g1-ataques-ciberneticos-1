@@ -1,0 +1,166 @@
+.guilherme-body {
+  font-family: Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f4f4f4;
+  margin: 0;
+}
+
+.guilherme-header {
+  width: 100%;
+  background-color: #333;
+  color: white;
+  padding: 10px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+.guilherme-img {
+  height: 40px;
+  margin-left: 20px;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+
+nav ul li {
+  margin-right: 20px;
+}
+
+nav ul li a {
+  color: white;
+  text-decoration: none;
+}
+
+nav ul li a:hover {
+  text-decoration: underline;
+}
+
+.guilherme-footer {
+  width: 100%;
+  background-color: #333;
+  color: white;
+  text-align: center;
+  padding: 10px 0;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+}
+
+.chat-container {
+  width: 400px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background-color: white;
+  overflow: hidden;
+  margin-top: 80px; 
+  margin-bottom: 50px; 
+}
+
+.chat-box {
+  height: 400px;
+  padding: 10px;
+  overflow-y: scroll;
+  border-bottom: 1px solid #ccc;
+}
+
+.input-box {
+  display: flex;
+}
+
+#user-input {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-top: 1px solid #ccc;
+}
+
+#send-button {
+  padding: 10px;
+  background-color: #007BFF;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+#send-button:hover {
+  background-color: #0056b3;
+}
+
+.message {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.message img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.message.user {
+  justify-content: flex-end;
+}
+
+.message.user img {
+  order: 1;
+  margin-left: 10px;
+  margin-right: 0;
+}
+
+.message-content {
+  background-color: #f1f1f1;
+  border-radius: 20px;
+  padding: 10px;
+  max-width: 70%;
+}
+
+.message.user .message-content {
+  background-color: #007BFF;
+  color: white;
+}
+
+.message .message-image img {
+  max-width: 300px;
+  border-radius: 10px;
+  margin-top: 10px;
+}
+
+/* CSS CRUD Bot Messages */
+
+label {
+  font-weight: bolder;
+}
+::placeholder {
+  color: lightskyblue !important;
+  opacity: 3;
+}
+::-webkit-input-placeholder {
+  color:  lightskyblue !important;
+}
+:-moz-placeholder {
+  color:  lightskyblue !important;
+  opacity:  3;
+}
+h1 {
+   text-align: center;
+}
+#msg {
+   height: 60px;
+}
+#grid-mensagens tbody {
+   cursor: pointer;
+}
