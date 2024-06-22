@@ -2,25 +2,25 @@
     "responses": {
         "1": {
             "text": "Os ataques de rede distribuídos muitas vezes são chamados de ataques de negação de serviço distribuído (DDoS). \nEsse tipo de ataque aproveita os limites de capacidade específicos que se aplicam a todos os recursos de rede, como \ninfraestrutura que viabiliza o site de uma empresa. O ataque DDoS envia múltiplas solicitações para o recurso Web\ninvadido com o objetivo de exceder a capacidade que o site tem de lidar com diversas solicitações, impedindo seu\nfuncionamento correto.",
-            "image": "../assets/images/ataqueddos.jpg",
+            "image": "../assets/images/botddos.jpg",
             "source": "https://example.com/source1"
         },
         "2": {
             "text": "Uma injeção de SQL, às vezes abreviada como SQLi, é um tipo de vulnerabilidade em que um invasor usa uma parte do código SQL (Structured Query Language) para manipular um banco de dados e obter acesso a informações potencialmente valiosas. Esse é um dos tipos de ataque mais comuns e perigosos porque pode ser usado contra qualquer aplicação de Web ou site que utilize um banco de dados SQL (ou seja, a maioria deles).",
-            "image": "../assets/images/injecaosql.jpg"
+            "image": "../assets/images/botsqlinjection.jpg"
         },
         "3": {
             "text": "Spam é um termo usado para disparos em massa de mensagens eletrônicas indesejadas cujo recebimento sequer foi autorizado pelo destinatário. Essa prática é mais popular no e-mail, mas também acontece em outros canais.",
-            "image": "../assets/images/spam.jpg",
+            "image": "../assets/images/botddos.jpg",
             "source": "https://example.com/source3"
         },
         "4": {
             "text": "Quando as pessoas pensam sobre o que é phishing, acham esta denominação diferente, já que ela tem origem no inglês, em fishing (pescar). A analogia remete a um pescador jogando um anzol com isca (o e-mail de phishing) e esperando que a vítima a morda. Em resumo, ataques de phishing são a prática de enviar comunicações fraudulentas que parecem vir de uma fonte confiável. O golpe geralmente é aplicado por e-mail, mas também pode surgir de uma mensagem SMS, por exemplo.",
-            "image": "../assets/images/phishing.jpg"
+            "image": "../assets/images/botphishing.jpg"
         },
         "5": {
             "text": "Prática focada em explorar as vulnerabilidades do usuário, nos ataques de engenharia social o criminoso manipula a vítima para conseguir que ela clique em links maliciosos, conecte em seu computador um dispositivo infectado ou revele informações sigilosas. É comum que esse tipo de cibercrime use formulários do Google e e-mails que solicitam senhas e outros dados pessoais ou corporativos que não devem ser compartilhados.",
-            "image": "../assets/images/engenhariasocial.jpg"
+            "image": "../assets/images/botsocialengineering.jpg"
         }
     }
 }

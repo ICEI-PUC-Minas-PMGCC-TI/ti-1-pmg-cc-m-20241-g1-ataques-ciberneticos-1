@@ -1,10 +1,10 @@
 var db_mensagens_inicial = {
     "data": [
-                { "id": 1, "opcao": "Ataque DDoS", "categoria": "informativa", "tipo": "Informativa", "data": "2023-06-01", "conteudo": "Ataque DDoS detectado em nosso servidor principal. Um ataque DDoS (Distributed Denial of Service) visa sobrecarregar um servidor com tráfego para torná-lo indisponível." },
-                { "id": 2, "opcao": "Injeção SQL", "categoria": "informativa", "tipo": "Informativa", "data": "2023-06-02", "conteudo": "Tentativa de injeção SQL bloqueada no sistema de login. Injeção SQL é uma técnica de ataque onde comandos SQL são inseridos em campos de entrada para manipular o banco de dados." },
-                { "id": 3, "opcao": "Phishing", "categoria": "informativa", "tipo": "Informativa", "data": "2023-06-03", "conteudo": "Email de phishing detectado e removido. Phishing é uma tentativa de obter informações sensíveis enganando as pessoas para que divulguem dados pessoais." },
-                { "id": 4, "opcao": "Malware", "categoria": "informativa", "tipo": "Informativa", "data": "2023-06-04", "conteudo": "Malware encontrado em um dispositivo da rede interna. Malware é um software malicioso projetado para danificar, interromper ou ganhar acesso não autorizado a sistemas de computador." },
-                { "id": 5, "opcao": "Ransomware", "categoria": "informativa", "tipo": "Informativa", "data": "2023-06-05", "conteudo": "Ataque de ransomware detectado e contido. Ransomware é um tipo de malware que criptografa os dados da vítima e exige um resgate para restaurar o acesso." }
+                { "id": 1, "opcao": "Ataque DDoS", "categoria": "informativa", "tipo": "Informativa", "data": "2023-06-01", "conteudo": "Um ataque DDoS (Distributed Denial of Service) visa sobrecarregar um servidor com tráfego para torná-lo indisponível." },
+                { "id": 2, "opcao": "Injeção SQL", "categoria": "informativa", "tipo": "Informativa", "data": "2023-06-02", "conteudo": "Injeção SQL é uma técnica de ataque onde comandos SQL são inseridos em campos de entrada para manipular o banco de dados." },
+                { "id": 3, "opcao": "Phishing", "categoria": "informativa", "tipo": "Informativa", "data": "2023-06-03", "conteudo": "Phishing é uma tentativa de obter informações sensíveis enganando as pessoas para que divulguem dados pessoais." },
+                { "id": 4, "opcao": "Malware", "categoria": "informativa", "tipo": "Informativa", "data": "2023-06-04", "conteudo": "Malware é um software malicioso projetado para danificar, interromper ou ganhar acesso não autorizado a sistemas de computador." },
+                { "id": 5, "opcao": "Ransomware", "categoria": "informativa", "tipo": "Informativa", "data": "2023-06-05", "conteudo": "Ransomware é um tipo de malware que criptografa os dados da vítima e exige um resgate para restaurar o acesso." }
             ]
 };
 

@@ -25,7 +25,7 @@ function addMessage(sender, text, imageUrl = null, sourceUrl = null) {
     message.className = `message ${sender}`;
 
     const img = document.createElement('img');
-    img.src = sender === 'bot' ? '../assets/images/bot.png' : '../assets/images/user.png';
+    img.src = sender === 'bot' ? '../assets/images/bot.png' : '../assets/images/botuser.png';
     img.alt = sender === 'bot' ? 'Bot' : 'Usuário';
 
     const messageContent = document.createElement('div');
