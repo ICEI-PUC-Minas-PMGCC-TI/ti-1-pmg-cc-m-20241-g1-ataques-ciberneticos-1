@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Cadastro de URLs</title>
+</head>
+<body style="background-color: rgb(103, 41, 160)";>
+    <div class="body-styles GH3">
+        <div class="container GH3">
+            <div class="cadastro GH3">
+                <h1>Cadastro de URLs</h1>
+                <div class="input-group GH3">
+                    <input type="text" class="id" placeholder="Nome:">
+                    <input type="url" class="categoria" placeholder="URL:">
+                    <select class="confianca">
+                        <option value="Confiavel">Confiável</option>
+                        <option value="Não confiavel">Não confiável</option>
+                    </select>
+                </div>
+                <div class="button-group GH3">
+                    <button class="button1 GH3">Inserir</button>
+                    <button class="button3 GH3">Excluir marcado</button>
+                    <button class="button4 GH3">Limpar</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="container2 GH3">
+            <h1>Lista de URLs</h1>
+            <table class="news-table GH3">
+                <thead>
+                    <tr>
+                        <th>Excluir</th>
+                        <th>Nome</th>
+                        <th>URL</th>
+                        <th>Confiança</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </div>
+    </div>
+
+        <script src="scriptC.js"></script>
+</body>
+</html>
