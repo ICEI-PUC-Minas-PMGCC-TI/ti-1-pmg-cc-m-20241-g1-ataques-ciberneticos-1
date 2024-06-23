@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../assets/css/gc3style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+<body>
+    <div id="gc-container">
+        <div class="gc-box">
+            <div class="gc-title">
+                <h1>Gerenciador de Senha</h1>
+            </div>
+                <div class="gc-text-field">
+                    <div class="gc-name">
+                        <input type="text" id="gc-nome" name="nome" placeholder="Nome:">
+                        <button id="gc-send-name"><i class="fa-solid fa-arrow-down"></i></button>
+                    </div>
+                    <div class="gc-password">
+                        <input type="password" name="password" id="gc-password" placeholder="Senha:">
+                        <button id="gc-show-password"><i class="fa-regular fa-eye"></i></button>
+                    </div>
+                    <div class="gc-send">
+                        <button id="gc-send-login"><i class="fa-solid fa-arrow-right"></i></button>
+                    </div>
+                </div>
+            <h2 class="gc-sub-text">Suas Senhas:</h2>
+            <div class="gc-sub-box">
+                <ul class="gc-list-password" id="gc-password-list">
+
+                </ul>
+            </div>
+        </div>
+    </div>
+    <script src="../assets/js/gc3script.js"></script>
+</body>
+</html>
