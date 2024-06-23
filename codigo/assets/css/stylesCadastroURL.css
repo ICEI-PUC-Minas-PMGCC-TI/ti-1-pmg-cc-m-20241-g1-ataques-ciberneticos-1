@@ -1,0 +1,124 @@
+.GH3.body-styles {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: rgb(103, 41, 160);
+}
+
+.GH3.container {
+    max-width: 800px; /* Ajustado max-width */
+    margin: 20px auto;
+    padding: 20px;
+}
+
+.GH3.cadastro {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.GH3.input-group input, /* Seletor de input modificado */
+.GH3.input-group select { /* Seletor de select adicionado */
+    display: block;
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.GH3.button-group {
+    display: flex;
+    justify-content: space-between;
+}
+
+.GH3.button-group button {
+    flex-grow: 1;
+    margin-right: 10px;
+}
+
+.GH3.button1 {
+    background-color: #28a745; /* Verde */
+    color: #fff;
+    cursor: pointer;
+    border: none;
+    padding: 10px;
+    
+}
+
+.GH3.button1:hover {
+    background-color: #218838; /* Verde escuro */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    filter: brightness(0.9); /* Reduz a luminosidade para 90% */
+}
+
+.GH3.button3 {
+    background-color: #dc3545; /* Vermelho */
+    color: #fff;
+    cursor: pointer;
+    border: none;
+    padding: 10px;
+}
+
+.GH3.button3:hover {
+    background-color: #c82333; /* Vermelho escuro */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    filter: brightness(0.9); /* Reduz a luminosidade para 90% */
+}
+
+.GH3.button4 {
+    background-color: #ffc107; /* Amarelo */
+    color: #212529;
+    cursor: pointer;
+    border: none;
+    padding: 10px;
+}
+
+.GH3.button4:hover {
+    background-color: #e0a800; /* Amarelo escuro */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    filter: brightness(0.9); /* Reduz a luminosidade para 90% */
+}
+
+.GH3.container2 {
+    max-width: 100%; /* Ajustado max-width */
+    margin: 20px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    overflow-y: auto;
+    max-height: 300px;
+    text-align: center;
+    background-color: aliceblue;
+}
+
+.GH3.news-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.GH3.news-table th,
+.GH3.news-table td {
+    padding: 8px;
+    border-bottom: 1px solid #ccc;
+    text-align: left;
+}
+
+.GH3.news-table th {
+    background-color: #f2f2f2;
+}
+
+.GH3.news-table tbody tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.GH3.delete-button {
+    background-color: #dc3545; /* Vermelho */
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+.GH3.delete-button:hover {
+    background-color: #c82333; /* Vermelho escuro */
+}
