@@ -3,63 +3,38 @@ cff-version: 1.0.1
 message: Please cite this software using these metadata.
 title: 
 authors:
-  - family-names: Gabriel 
-    given-names: Ferreira Pereira
-  - family-names: Iago 
+  - family-names: Carvalho de Souza
+    given-names: Gabriel
+  - family-names: Ferreira Pereira Iago 
+    given-names: Gabriel
+  - family-names: Soares Silva
+    given-names: Guilherme
+  - family-names: Henrique Silva Maciel
+    given-names: Gustavo
+  - family-names: Iago
     given-names: Henrique lima Silva de Oliveira
-  - family-names: Gabriel
-    given-names:  Carvalho de Souza
-  - family-names: Gustavo 
-    given-names: Henrique Silva Maciel
-  - family-names: Guilherme 
-    given-names: Soares Silva
-  - family-names: 
-    given-names:
   - name-suffix: Professor
     affiliation: PUC Minas
-    family-names: 
-    given-names: 
+    family-names: Carlos Oliveira Caetano
+    given-names: João
   - name-suffix: Professor
     affiliation: PUC Minas
-    family-names: 
-    given-names: 
+    family-names: Mara Freitas Diniz
+    given-names: Luciana
+    - name-suffix: Professor
+    affiliation: PUC Minas
+    family-names: Henrique Ramos Costa
+    given-names: Pedro
+    - name-suffix: Professor
+    affiliation: PUC Minas
+    family-names: Vieira Carneiro
+    given-names: Rommel
 keywords:
-  - 
-  - 
+  - cybersecurity
+  - passwords
 repository-code: 
 license: CC-BY-4.0
 version: 1.0.0
 date-released: 2022-07-14
 =======
-cff-version: 1.0.1
-message: Please cite this software using these metadata.
-title: 
-authors:
-  - family-names: 
-    given-names: 
-  - family-names: 
-    given-names: 
-  - family-names: 
-    given-names: 
-  - family-names: 
-    given-names: 
-  - family-names: 
-    given-names: 
-  - family-names: 
-    given-names:
-  - name-suffix: Professor
-    affiliation: PUC Minas
-    family-names: 
-    given-names: 
-  - name-suffix: Professor
-    affiliation: PUC Minas
-    family-names: 
-    given-names: 
-keywords:
-  - 
-  - 
-repository-code: 
-license: CC-BY-4.0
-version: 1.0.0
-date-released: 2022-07-14
 >>>>>>> 576e4073eb686b7caee5801aac8f95491eb4d605
