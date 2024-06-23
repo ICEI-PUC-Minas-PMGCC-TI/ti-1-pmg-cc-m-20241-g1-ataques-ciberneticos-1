@@ -1,0 +1,43 @@
+.GH2.body-styles {
+    font-family: Arial, sans-serif;
+    background-color:rgb(103, 41, 160);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.GH2.container {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.GH2 input {
+    width: 80%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.GH2 button {
+    padding: 10px 20px;
+    border: none;
+    background-color: #28a745;
+    color: #fff;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.GH2 button:hover {
+    background-color: #218838;
+}
+
+.GH2 #result {
+    margin-top: 20px;
+    font-size: 18px;
+}
