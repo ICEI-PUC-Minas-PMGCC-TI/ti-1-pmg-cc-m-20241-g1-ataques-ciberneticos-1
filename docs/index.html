@@ -522,6 +522,7 @@
                 <p>Inclua, para cada funcionalidade, itens como: (1) titulos e descrição da funcionalidade; (2) Estrutura de dados associada; (3) o detalhe sobre as instruções de acesso e uso.</p>
               </div>
 
+              <!-- Funcionalidade 1 -->
               <section>
                 <h5>Funcionalidade 1 - Interação com Bot de mensagens</h5>
                 <p>Permite o envio de mensagens e recebimento de mensagens</p>
@@ -533,7 +534,7 @@
                     <li>Em seguida, clique no botão enviar</li>
                   </ul></li>
                 </ul>
-                <p class="text-center"><img class="img-fluid" src="assets/images/exemplo-funcionalidade.png" alt="Tela Cadastro de Contatos"></p>
+                <p class="text-center"><img class="img-fluid" src="assets/images/func_sprint1jpg.jpg" alt="Tela Cadastro de Contatos"></p>
               </section>
             </section>
 
@@ -579,18 +580,61 @@
                 </pre>
               </section>
 
+              <!-- Funcionalidade 2 - Guilherme Silva -->
               <section>
-                <h5>Estrutura de Dados - Usuários<span class="exemplo">EXEMPLO</span></h5>
-                <p>Registro dos usuários do sistema utilizados para login e para o perfil do sistema</p>
+                <h5>Funcionalidade 2 - CRUD de mensagens do Bot</h5>
+                <p>Permite a criação, leitura, atualização e exclusão de mensagens</p>
+                <ul class="list-unstyled">
+                  <li><strong>Estrutura de dados: </strong><a href="#ti_ed_mensagens">Mensagens</a></li>
+                  <li><strong>Instruções de acesso a usuários com permissão: </strong><ul>
+                    <li>Abra o site e acesse a página de CRUD de Mensagens</li>
+                    <li>Crie, leie, atualize ou exclua uma ou mais mensagens</li>
+                  </ul></li>
+                </ul>
+                <p class="text-center"><img class="img-fluid" src="assets/images/crud_bot.jpg" alt="Tela Cadastro de Contatos"></p>
+                <p class="text-center"><img class="img-fluid" src="assets/images/crud2_bot.jpg" alt="Tela Cadastro de Contatos"></p>
+              </section>
+            </section>
+
+            <!-- Estruturas de dados =============== -->
+            <section id="ti_estruturas_dados">
+              <h4>Estruturas de Dados</h4>
+              <p>Descrição das estruturas de dados utilizadas na solução com exemplos no formato JSON.
+                <button type="button" class="btn btn-light btn-sm float-right" data-toggle="collapse" href="#collapseEstruturas">Info</button>
+              </p>
+              <div class="alert alert-warning collapse" role="alert" id="collapseEstruturas">
+                <p>Apresente as estruturas de dados utilizadas na solução tanto para dados utilizados na essência da aplicação quanto outras estruturas que foram criadas para algum tipo de configuração</p>
+                <p>Nomeie a estrutura, coloque uma descrição sucinta e apresente um exemplo em formato JSON.</p>
+              </div>
+
+              <section>
+                <h5>Estrutura de Dados - Mensagens</h5>
+                <p>Mensagens salvas em JSON para o GuardBot</p>
                 <pre>
-                  {
-                    id: "eed55b91-45be-4f2c-81bc-7686135503f9"
-                    email: "admin@abc.com"
-                    id: "eed55b91-45be-4f2c-81bc-7686135503f9"
-                    login: "admin"
-                    nome: "Administrador do Sistema"
-                    senha: "123"
-                  }
+                  "responses": {
+                    "1": {
+                        "text": "Os ataques de rede distribuídos muitas vezes são chamados de ataques de negação de serviço distribuído (DDoS). \nEsse tipo de ataque aproveita os limites de capacidade específicos que se aplicam a todos os recursos de rede, como \ninfraestrutura que viabiliza o site de uma empresa. O ataque DDoS envia múltiplas solicitações para o recurso Web\ninvadido com o objetivo de exceder a capacidade que o site tem de lidar com diversas solicitações, impedindo seu\nfuncionamento correto.",
+                        "image": "../assets/images/botddos.jpg",
+                        "source": "https://example.com/source1"
+                    },
+                    "2": {
+                        "text": "Uma injeção de SQL, às vezes abreviada como SQLi, é um tipo de vulnerabilidade em que um invasor usa uma parte do código SQL (Structured Query Language) para manipular um banco de dados e obter acesso a informações potencialmente valiosas. Esse é um dos tipos de ataque mais comuns e perigosos porque pode ser usado contra qualquer aplicação de Web ou site que utilize um banco de dados SQL (ou seja, a maioria deles).",
+                        "image": "../assets/images/botsqlinjection.jpg"
+                    },
+                    "3": {
+                        "text": "Spam é um termo usado para disparos em massa de mensagens eletrônicas indesejadas cujo recebimento sequer foi autorizado pelo destinatário. Essa prática é mais popular no e-mail, mas também acontece em outros canais.",
+                        "image": "../assets/images/botddos.jpg",
+                        "source": "https://example.com/source3"
+                    },
+                    "4": {
+                        "text": "Quando as pessoas pensam sobre o que é phishing, acham esta denominação diferente, já que ela tem origem no inglês, em fishing (pescar). A analogia remete a um pescador jogando um anzol com isca (o e-mail de phishing) e esperando que a vítima a morda. Em resumo, ataques de phishing são a prática de enviar comunicações fraudulentas que parecem vir de uma fonte confiável. O golpe geralmente é aplicado por e-mail, mas também pode surgir de uma mensagem SMS, por exemplo.",
+                        "image": "../assets/images/botphishing.jpg"
+                    },
+                    "5": {
+                        "text": "Prática focada em explorar as vulnerabilidades do usuário, nos ataques de engenharia social o criminoso manipula a vítima para conseguir que ela clique em links maliciosos, conecte em seu computador um dispositivo infectado ou revele informações sigilosas. É comum que esse tipo de cibercrime use formulários do Google e e-mails que solicitam senhas e outros dados pessoais ou corporativos que não devem ser compartilhados.",
+                        "image": "../assets/images/botsocialengineering.jpg"
+                    }
+                }
                 </pre>
               </section>
             </section>
