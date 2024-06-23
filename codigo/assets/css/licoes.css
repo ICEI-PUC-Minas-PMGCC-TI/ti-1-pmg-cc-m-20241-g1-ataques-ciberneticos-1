@@ -46,7 +46,6 @@ header {
     padding: 10px;
     color: black; /* Cor do texto preto no header */
     font-weight: bold;
-    transition: transform 0.7s ease;
 }
   
 #menuToggle {
@@ -239,7 +238,6 @@ footer {
     text-decoration: none;
     color: black;
     font-size: 1rem;
-    transition: transform 0.7s ease;
 }
 
 .links_footer:hover {

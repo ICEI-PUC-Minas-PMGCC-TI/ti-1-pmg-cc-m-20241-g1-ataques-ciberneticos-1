@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Playwrite+NG+Modern:wght@100..400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/ataques.css">
+  <link rel="shortcut icon" href="../assets/images/logo.ico" type="image/x-icon">
+  <title>Injeção de SQL</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      margin: 0;
+    }
+    h1, h2, h3, p, code {
+      margin-bottom: 15px;
+    }
+    code {
+        width: 40%;
+    }
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #f8f9fa;
+      padding: 20px;
+      width: 100%;
+      top: 0;
+      z-index: 1000;
+    }
+    .header a {
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 1.5rem;
+    }
+
+    .menu-icon {
+      display: none;
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
+    .menu {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+    }
+    .menu li {
+      margin-right: 20px;
+    }
+    .menu li a {
+      text-decoration: none;
+      color: #333;
+      font-weight: bold;
+    }
+
+    .big-button-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      width: 100%;
+      margin-top: 20px;
+    }
+    .big-button {
+      padding: 20px 40px;
+      font-size: 1.5rem;
+      color: white;
+      background-color: #007BFF;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      text-decoration: none;
+      text-align: center;
+      margin-top: 20px; /* Margin added for spacing */
+    }
+    .big-button:hover {
+      background-color: #0056b3;
+    }
+    @media (max-width: 768px) {
+      .menu {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        background-color: #f8f9fa;
+        border-top: 1px solid #ccc;
+      }
+      .menu.open {
+        display: flex;
+      }
+      .menu li {
+        margin-right: 0;
+        text-align: center;
+        padding: 10px 0;
+        border-bottom: 1px solid #ccc;
+      }
+      .menu-icon {
+        display: block;
+      }
+    }
+    footer {
+      margin-top: 20px;
+      width: 100%;
+    }
+  </style>
+</head>
+
+<body>
+  <header class="header">
+    <a class="NetGuard" href="../index.html">NetGuard</a>
+    <div class="menu-icon" id="menuIcon">&#9776;</div>
+    <nav>
+      <ul class="menu" id="menu">
+        <li><a class="header_link" href="licoes.html">Lições</a></li>
+        <li><a class="header_link" href="potencializa.html">Potencializador de Senha</a></li>
+        <li><a class="header_link" href="gerencia.html">Gerenciador de Senha</a></li>
+        <li><a class="header_link" href="verificacao.html">Verificação de Links</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <h1>Ataque de Injeção de SQL</h1>
+
+  <p>O ataque de injeção de SQL é uma técnica maliciosa onde um atacante insere comandos SQL não autorizados em uma consulta através das entradas de um formulário ou de parâmetros de URL. Essa vulnerabilidade ocorre quando entradas não validadas ou sanitizadas de usuários são incorporadas diretamente em instruções SQL executadas pelo banco de dados.</p>
+
+  <h2>Riscos de Injeção de SQL</h2>
+
+  <p>Os ataques de injeção de SQL podem resultar em sérios riscos de segurança, incluindo:</p>
+
+  <ul>
+    <li><strong>Roubo de dados sensíveis:</strong> Um hacker pode manipular comandos SQL para acessar informações confidenciais, como senhas, números de cartões de crédito e outros dados pessoais.</li>
+    <li><strong>Modificação ou exclusão de dados:</strong> O atacante pode alterar, excluir ou corromper dados armazenados no banco de dados, causando prejuízos significativos ao sistema e às informações.</li>
+    <li><strong>Execução de comandos maliciosos:</strong> Injeções de SQL podem ser usadas para executar comandos no servidor de banco de dados, o que pode comprometer o sistema operacional subjacente ou outros serviços.</li>
+    <li><strong>Elevação de privilégios:</strong> Dependendo da vulnerabilidade explorada, um invasor pode obter acesso a funcionalidades administrativas ou privilégios elevados dentro do sistema.</li>
+  </ul>
+
+  <h2>Exemplos de Códigos Vulneráveis</h2>
+
+  <p>Imagine um código Python que recebe um parâmetro de entrada para buscar um usuário no banco de dados:</p>
+
+  <code>
+    $id = $_GET['id'];<br>
+    $sql = "SELECT * FROM usuarios WHERE id = $id";<br>
+  </code>
+
+  <p>No Python, poderíamos ter algo semelhante:</p>
+
+  <code>
+    import sqlite3 <br>
+    <br>
+    # Simulação do parâmetro GET <br>
+    id = "1'; DROP TABLE usuarios; --" <br>
+    <br>
+    # Conexão ao banco de dados SQLite (apenas para exemplo)<br>
+    conn = sqlite3.connect('exemplo.db')<br>
+    cursor = conn.cursor()<br>
+    <br>
+    # Consulta SQL vulnerável<br>
+    query = f"SELECT * FROM usuarios WHERE id = '{id}'"<br>
+    <br>
+    # Executa a consulta<br>
+    cursor.execute(query)<br>
+    <br>
+    # Obtém os resultados<br>
+    results = cursor.fetchall()<br>
+    <br>
+    # Imprime os resultados (apenas para demonstração)<br>
+    for row in results:<br>
+        print(row)<br>
+        <br>
+    # Fecha a conexão<br>
+    conn.close()<br>
+  </code>
+
+  <p>Neste exemplo, se o parâmetro 'id' for manipulado por um atacante, como no caso de <code>"1'; DROP TABLE usuarios; --"</code>, a consulta SQL resultante se tornará maliciosa, tentando deletar a tabela 'usuarios' do banco de dados.</p>
+
+  <h3>Exemplo 2: Injeção de SQL através de Formulário</h3>
+  <p>Considere um formulário de login onde o usuário insere seu nome de usuário e senha:</p>
+  <code>
+    SELECT * FROM usuarios WHERE usuario = '<span style="color: red;">$usuario</span>' AND senha = '<span style="color: red;">$senha</span>';
+  </code>
+  <p>Se o usuário inserir <code>' OR '1'='1</code> como senha, a consulta se tornará verdadeira para qualquer usuário, pois o SQL se torna:</p>
+  <code>
+    SELECT * FROM usuarios WHERE usuario = '<span style="color: red;">$usuario</span>' AND senha = '<span style="color: red;">' OR '1'='1</span>';
+  </code>
+
+  <h3>Exemplo 3: Injeção de SQL com Instruções SQL Aninhadas</h3>
+  <p>Em alguns casos, os hackers podem usar instruções SQL aninhadas para explorar vulnerabilidades. Veja o exemplo:</p>
+  <code>
+    SELECT * FROM produtos WHERE categoria = '<span style="color: red;">$categoria</span>' AND preco > (SELECT AVG(preco) FROM produtos);
+  </code>
+  <p>Se a variável <code>$categoria</code> for manipulada, um invasor pode fechar a instrução WHERE e executar outra consulta maliciosa.</p>
+
+  <h2>Como os Hackers Executam Ataques de Injeção de SQL</h2>
+  <p>Os hackers exploram vulnerabilidades de injeção de SQL de várias maneiras:</p>
+
+  <ul>
+    <li><strong>Entradas de formulários:</strong> Inserindo comandos SQL manipulados em campos de formulários, como campos de login, pesquisa ou qualquer entrada de dados do usuário.</li>
+    <li><strong>Parâmetros de URL:</strong> Manipulando parâmetros passados via URL para alterar o comportamento esperado da aplicação.</li>
+    <li><strong>Cookies:</strong> Modificando cookies que contenham dados SQL para enganar a aplicação.</li>
+    <li><strong>Erros de aplicação:</strong> Aproveitando mensagens de erro da aplicação que revelam informações sobre a estrutura do banco de dados.</li>
+    <li><strong>Headers HTTP:</strong> Inserindo comandos SQL maliciosos nos headers HTTP, como cookies de sessão ou referenciadores (referrer).</li>
+  </ul>
+
+  <h2>Boas Práticas para Prevenção de Injeção de SQL</h2>
+
+  <ul>
+    <li><strong>Utilize consultas parametrizadas ou prepared statements:</strong> Ao invés de concatenar strings diretamente em consultas SQL, utilize parâmetros que são tratados separadamente pelo driver do banco de dados.</li>
+    <li><strong>Sanitize todas as entradas do usuário:</strong> Verifique e limpe todas as entradas de dados do usuário para remover ou escapar caracteres perigosos que podem ser usados para injetar comandos SQL.</li>
+    <li><strong>Implemente least privilege:</strong> Atribua ao banco de dados somente os privilégios mínimos necessários para funcionar corretamente.</li>
+    <li><strong>Realize validação de entrada no servidor e no cliente:</strong> Valide e restrinja entradas de dados no lado do servidor e também no lado do cliente sempre que possível.</li>
+    <li><strong>Monitore e audite logs de aplicação:</strong> Implemente sistemas de monitoramento para detectar tentativas de ataque e revise regularmente logs de aplicação para identificar padrões suspeitos.</li>
+    <li><strong>Utilize frameworks e bibliotecas de segurança:</strong> Utilize frameworks e bibliotecas de desenvolvimento que ofereçam proteção automática contra injeção de SQL.</li>
+  </ul>
+
+  <p>Adotar essas práticas pode reduzir significativamente o risco de vulnerabilidades de injeção de SQL e ajudar a proteger suas aplicações contra ataques maliciosos.</p>
+
+  <div class="big-button-container">
+    <h2>Gostaria de testar seu conhecimento sobre o assunto</h2>
+    <a href="quiz.html" class="big-button">Clique aqui para iniciar o Quiz</a>  <!-- MUDAR PARA PARTE DO IAGO -->
+
+  </div>
+
+  <footer>
+    <div class="conteudo_footer">
+        <a class="links_footer" href="licoes.html">Lições</a>
+        <a class="links_footer" href="potencializa.html">Potencializador De Senhas</a>
+        <a class="links_footer" href="gerencia.html">Gerenciador De Senhas</a>
+        <a class="links_footer" href="verificacao.html">Verificação De Links</a>
+    </div>
+    <div class="titulo_footer">
+        <p>© 2024 NetGuard Inc. Todos os Direitos Reservados. Duvidas? Use o email suportenetguard@gmail.com</p>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('menuIcon').addEventListener('click', function() {
+      var menu = document.getElementById('menu');
+      if (menu.classList.contains('open')) {
+        menu.classList.remove('open');
+      } else {
+        menu.classList.add('open');
+      }
+    });
+  </script>
+
+</body>
+</html>
