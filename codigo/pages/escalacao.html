@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Playwrite+NG+Modern:wght@100..400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/css/ataques.css">
+    <link rel="shortcut icon" href="../assets/images/logo.ico" type="image/x-icon">
+    <title>Escalação de Privilégios</title>
+    <style>
+      body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      margin: 0;
+    }
+    h1, h2, h3, p, code {
+      margin-bottom: 15px;
+    }
+    code {
+        width: 40%;
+    }
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #f8f9fa;
+      padding: 20px;
+      width: 100%;
+      top: 0;
+      z-index: 1000;
+    }
+    .header a {
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 1.5rem;
+    }
+
+    .menu-icon {
+      display: none;
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
+    .menu {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+    }
+    .menu li {
+      margin-right: 20px;
+    }
+    .menu li a {
+      text-decoration: none;
+      color: #333;
+      font-weight: bold;
+    }
+
+    .big-button-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      width: 100%;
+      margin-top: 20px;
+    }
+    .big-button {
+      padding: 20px 40px;
+      font-size: 1.5rem;
+      color: white;
+      background-color: #007BFF;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      text-decoration: none;
+      text-align: center;
+      margin-top: 20px; /* Margin added for spacing */
+    }
+    .big-button:hover {
+      background-color: #0056b3;
+    }
+    @media (max-width: 768px) {
+      .menu {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        background-color: #f8f9fa;
+        border-top: 1px solid #ccc;
+      }
+      .menu.open {
+        display: flex;
+      }
+      .menu li {
+        margin-right: 0;
+        text-align: center;
+        padding: 10px 0;
+        border-bottom: 1px solid #ccc;
+      }
+      .menu-icon {
+        display: block;
+      }
+    }
+    footer {
+      margin-top: 20px;
+      width: 100%;
+    }
+    </style>
+</head>
+
+<header class="header">
+    <a class="NetGuard" href="../index.html">NetGuard</a>
+    <div class="menu-icon" id="menuIcon">&#9776;</div>
+    <nav>
+      <ul class="menu" id="menu">
+        <li><a class="header_link" href="licoes.html">Lições</a></li>
+        <li><a class="header_link" href="potencializa.html">Potencializador de Senha</a></li>
+        <li><a class="header_link" href="gerencia.html">Gerenciador de Senha</a></li>
+        <li><a class="header_link" href="verificacao.html">Verificação de Links</a></li>
+      </ul>
+    </nav>
+  </header>
+
+
+<body>
+    <h1>Escalação de Privilégios</h1>
+    <p>A escalação de privilégios é um tipo de ataque onde um usuário ganha acesso a níveis de permissão superiores aos que foram inicialmente concedidos. Isso pode permitir que o invasor execute ações restritas e acesse dados sensíveis.</p>
+    
+    <h2>Riscos</h2>
+    <ul>
+        <li>Execução de comandos administrativos.</li>
+        <li>Acesso a dados confidenciais.</li>
+        <li>Modificação de configurações de segurança.</li>
+        <li>Instalação de malware ou backdoors.</li>
+        <li>Destruição de dados críticos.</li>
+    </ul>
+    
+    <h2>Como os Hackers Executam o Ataque</h2>
+    <p>Os hackers podem executar ataques de escalação de privilégios de várias maneiras, incluindo:</p>
+    <ol>
+        <li>Exploração de vulnerabilidades no sistema operacional ou software.</li>
+        <li>Engenharia social para obter credenciais de usuário privilegiado.</li>
+        <li>Manipulação de tokens ou cookies de sessão.</li>
+        <li>Exploração de permissões incorretamente configuradas.</li>
+    </ol>
+    
+    <h2>Exemplo de Código Vulnerável</h2>
+    <div class="code-example">
+        <code>
+            &lt;!-- Exemplo de código PHP vulnerável --&gt;<br>
+            &lt;?php<br>
+            // Usuário fornecido via entrada de formulário<br>
+            $user = $_POST['user'];<br>
+            <br>
+            // Executa comando sem validação adequada<br>
+            exec("sudo usermod -aG sudo " . $user);<br>
+            <br>
+            echo "Usuário $user adicionado ao grupo sudo.";<br>
+            ?&gt;
+        </code>
+    </div>
+    <p>No exemplo acima, o comando <code>exec</code> é usado sem validação adequada, permitindo que um usuário forneça um valor malicioso que pode ser usado para escalar privilégios.</p>
+    
+    <h2>Exemplo de Código Seguro</h2>
+    <div class="code-example">
+        <code>
+            &lt;!-- Exemplo de código PHP seguro --&gt;<br>
+            &lt;?php<br>
+            // Usuário fornecido via entrada de formulário<br>
+            $user = $_POST['user'];<br>
+            <br>
+            // Lista de usuários permitidos<br>
+            $allowed_users = ['user1', 'user2', 'user3'];<br>
+            <br>
+            // Verifica se o usuário está na lista de usuários permitidos<br>
+            if (in_array($user, $allowed_users)) {<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;exec("sudo usermod -aG sudo " . escapeshellarg($user));<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;echo "Usuário $user adicionado ao grupo sudo.";<br>
+            } else {<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;echo "Usuário não autorizado.";<br>
+            }<br>
+            ?&gt;
+        </code>
+    </div>
+    <p>No exemplo acima, a entrada do usuário é validada contra uma lista de usuários permitidos e a função <code>escapeshellarg</code> é usada para evitar injeção de comandos.</p>
+    
+    <h2>Boas Práticas</h2>
+    <ul>
+        <li>Validar e sanitizar todas as entradas do usuário.</li>
+        <li>Implementar o princípio do menor privilégio, concedendo apenas as permissões necessárias.</li>
+        <li>Utilizar autenticação multifator para acesso a contas privilegiadas.</li>
+        <li>Monitorar e auditar regularmente as atividades de contas privilegiadas.</li>
+        <li>Aplicar patches e atualizações de segurança prontamente.</li>
+    </ul>
+    
+    <h2>Más Práticas</h2>
+    <ul>
+        <li>Executar comandos de sistema com entradas não verificadas.</li>
+        <li>Conceder permissões excessivas a usuários ou processos.</li>
+        <li>Não utilizar logs para monitorar atividades de segurança.</li>
+        <li>Armazenar senhas e tokens de autenticação em texto simples.</li>
+        <li>Ignorar a necessidade de revisões regulares de segurança e permissões.</li>
+    </ul>
+
+    <div class="big-button-container">
+      <h2>Gostaria de testar seu conhecimento sobre o assunto</h2>
+      <a href="quiz.html" class="big-button">Clique aqui para iniciar o Quiz</a>  <!-- MUDAR PARA PARTE DO IAGO -->
+  
+    </div>
+  
+    
+    <footer>
+        <div class="conteudo_footer">
+            <a class="links_footer" href="licoes.html">Lições</a>
+            <a class="links_footer" href="potencializa.html">Potencializador De Senhas</a>
+            <a class="links_footer" href="gerencia.html">Gerenciador De Senhas</a>
+            <a class="links_footer" href="verificacao.html">Verificação De Links</a>
+        </div>
+        <div class="titulo_footer">
+            <p>© 2024 NetGuard Inc. Todos os Direitos Reservados. Duvidas? Use o email suportenetguard@gmail.com</p>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('menuIcon').addEventListener('click', function() {
+          var menu = document.getElementById('menu');
+          if (menu.classList.contains('open')) {
+            menu.classList.remove('open');
+          } else {
+            menu.classList.add('open');
+          }
+        });
+      </script>
+    
+    
+</body>
+</html>

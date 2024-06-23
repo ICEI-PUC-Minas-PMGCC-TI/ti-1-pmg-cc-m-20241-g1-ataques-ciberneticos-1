@@ -1,0 +1,50 @@
+[
+    {
+        "titulo": "Injeção SQL",
+        "descricao": "Injeção SQL é um ataque cibernético que insere comandos SQL maliciosos em aplicações, permitindo acesso e alteração de dados."
+    },
+    {
+        "titulo": "Execução de Comando",
+        "descricao": "A execução de comando permite que invasores rodem comandos arbitrários no servidor via Prompt de Comando, comprometendo todo o sistema."
+    },
+    {
+        "titulo": "Sequestro de Cliques",
+        "descricao": "Sequestro de Cliques redireciona cliques do usuário para ações maliciosas usando elementos invisíveis na web, comprometendo a segurança."
+    },
+    {
+        "titulo": "Vulnerabilidade de Upload de arquivos",
+        "descricao": "Vulnerabilidade de Upload de Arquivos é uma falha que permite a invasores enviar e executar arquivos maliciosos no servidor, ameaçando sua segurança."
+    },
+    {
+        "titulo": "Vazamento de Informação",
+        "descricao": "Vazamento de Informação é a divulgação não autorizada de dados sensíveis, podendo resultar em danos à privacidade, reputação e segurança das pessoas ou organizações envolvidas."
+    },
+    {
+        "titulo": "Escalação de Privilégios",
+        "descricao": "Escalação de Privilégios é quando um invasor obtém acesso a níveis mais altos de autoridade do que deveria, permitindo manipulação indevida do sistema ou dados."
+    },
+    {
+        "titulo": "Ataques de Negação de Serviço",
+        "descricao": "Ataques de Negação de Serviço (DoS) visam sobrecarregar sistemas ou redes com tráfego malicioso, tornando-os inacessíveis a usuários legítimos."
+    },
+    {
+        "titulo": "Falsificação de e-mail",
+        "descricao": "Falsificação de e-mail, ou spoofing, mascara o remetente para parecer legítimo, frequentemente usado em ataques de phishing."
+    },
+    {
+        "titulo": "Malvertising",
+        "descricao": "Malvertising é a distribuição de malware por meio de anúncios online, redirecionando usuários para sites maliciosos ou baixando malware em seus dispositivos."
+    },
+    {
+        "titulo": "Falsificação de Solicitação no Servidor (CSRF)",
+        "descricao": "Falsificação de Solicitação no Servidor (CSRF) é um ataque cibernético em que um invasor engana um usuário autenticado a executar ações indesejadas em um aplicativo web."
+    },
+    {
+        "titulo": "Execução Remota de Código",
+        "descricao": "A Execução Remota de Código é um tipo de ataque onde um invasor pode executar comandos arbitrários em um sistema vulnerável, geralmente explorando falhas de segurança em softwares."
+    },
+    {
+        "titulo": "Inclusão de Script entre Sites (XSS)",
+        "descricao": "A Inclusão de Script entre Sites (XSS) é uma vulnerabilidade que permite a inserção de scripts maliciosos em páginas web, explorando a falta de validação de entrada de dados."
+    }
+]

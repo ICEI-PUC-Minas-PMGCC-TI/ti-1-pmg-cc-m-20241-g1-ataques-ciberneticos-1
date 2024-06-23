@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Playwrite+NG+Modern:wght@100..400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/css/ataques.css">
+    <link rel="shortcut icon" href="../assets/images/logo.ico" type="image/x-icon">
+    <title>Inclusão de Script entre Sites (XSSi)</title>
+    <style>
+          body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      margin: 0;
+    }
+    h1, h2, h3, p, code {
+      margin-bottom: 15px;
+    }
+    code {
+        width: 40%;
+    }
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #f8f9fa;
+      padding: 20px;
+      width: 100%;
+      top: 0;
+      z-index: 1000;
+    }
+    .header a {
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 1.5rem;
+    }
+
+    .menu-icon {
+      display: none;
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
+    .menu {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+    }
+    .menu li {
+      margin-right: 20px;
+    }
+    .menu li a {
+      text-decoration: none;
+      color: #333;
+      font-weight: bold;
+    }
+
+    .big-button-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      width: 100%;
+      margin-top: 20px;
+    }
+    .big-button {
+      padding: 20px 40px;
+      font-size: 1.5rem;
+      color: white;
+      background-color: #007BFF;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      text-decoration: none;
+      text-align: center;
+      margin-top: 20px; /* Margin added for spacing */
+    }
+    .big-button:hover {
+      background-color: #0056b3;
+    }
+    @media (max-width: 768px) {
+      .menu {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        background-color: #f8f9fa;
+        border-top: 1px solid #ccc;
+      }
+      .menu.open {
+        display: flex;
+      }
+      .menu li {
+        margin-right: 0;
+        text-align: center;
+        padding: 10px 0;
+        border-bottom: 1px solid #ccc;
+      }
+      .menu-icon {
+        display: block;
+      }
+    }
+    </style>
+</head>
+
+<header class="header">
+    <a class="NetGuard" href="../index.html">NetGuard</a>
+    <div class="menu-icon" id="menuIcon">&#9776;</div>
+    <nav>
+      <ul class="menu" id="menu">
+        <li><a class="header_link" href="licoes.html">Lições</a></li>
+        <li><a class="header_link" href="potencializa.html">Potencializador de Senha</a></li>
+        <li><a class="header_link" href="gerencia.html">Gerenciador de Senha</a></li>
+        <li><a class="header_link" href="verificacao.html">Verificação de Links</a></li>
+      </ul>
+    </nav>
+  </header>
+
+<body>
+    <h1>Inclusão de Script entre Sites (XSSi)</h1>
+    <p>A inclusão de script entre sites (Cross-Site Script Inclusion, XSSi) é uma técnica usada por atacantes para incluir scripts maliciosos de um domínio externo em uma página web legítima. Isso pode ocorrer quando um site incorpora scripts de terceiros sem verificação adequada, resultando em potenciais vulnerabilidades de segurança.</p>
+    
+    <h2>Riscos</h2>
+    <ul>
+        <li>Execução de scripts maliciosos no contexto do site legítimo.</li>
+        <li>Roubo de cookies de sessão e outras informações sensíveis do usuário.</li>
+        <li>Redirecionamento para páginas falsas de phishing.</li>
+        <li>Manipulação de conteúdo exibido no site.</li>
+        <li>Comprometimento da integridade e confiança do site.</li>
+    </ul>
+    
+    <h2>Como os Hackers Executam o Ataque</h2>
+    <p>Os hackers podem executar ataques XSSi de várias maneiras, incluindo:</p>
+    <ol>
+        <li>Incluindo scripts maliciosos através de links diretos em elementos como <code>&lt;script&gt;</code>, <code>&lt;img&gt;</code>, <code>&lt;iframe&gt;</code> ou outros.</li>
+        <li>Manipulando a inclusão de recursos externos, como bibliotecas JavaScript, de fontes não confiáveis.</li>
+        <li>Explorando sites que permitem aos usuários incorporar conteúdo externo sem validação adequada.</li>
+    </ol>
+    
+    <h2>Exemplo de Código Vulnerável</h2>
+    <div class="code-example">
+        <code>
+            &lt;!-- Exemplo de código HTML vulnerável a XSSi --&gt;<br>
+            &lt;html&gt;<br>
+            &lt;head&gt;<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&lt;title&gt;Página Vulnerável&lt;/title&gt;<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&lt;script src="https://site-malicioso.com/script.js"&gt;&lt;/script&gt;<br>
+            &lt;/head&gt;<br>
+            &lt;body&gt;<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&lt;h1&gt;Olá, mundo!&lt;/h1&gt;<br>
+            &lt;/body&gt;<br>
+            &lt;/html&gt;
+        </code>
+    </div>
+    <p>No exemplo acima, o script malicioso hospedado em <code>https://site-malicioso.com/script.js</code> é incluído na página sem verificação adequada, o que pode levar a execução de código não autorizado no contexto do site.</p>
+    
+    <h2>Boas Práticas</h2>
+    <ul>
+        <li>Validar e sanitizar todas as entradas de dados recebidas de usuários.</li>
+        <li>Utilizar listas de URLs permitidas (whitelisting) para scripts e recursos externos.</li>
+        <li>Implementar cabeçalhos de segurança HTTP como Content Security Policy (CSP) para mitigar riscos XSSi.</li>
+        <li>Monitorar e auditar regularmente o código do site em busca de vulnerabilidades.</li>
+        <li>Educacionalizar desenvolvedores e usuários sobre práticas seguras na web.</li>
+    </ul>
+    
+    <h2>Más Práticas</h2>
+    <ul>
+        <li>Permitir a inclusão de scripts e recursos externos sem validação adequada.</li>
+        <li>Confiança exclusiva em mecanismos de defesa do lado do cliente contra ataques XSS.</li>
+        <li>Não monitorar ou auditar regularmente o código do site para vulnerabilidades.</li>
+        <li>Ignorar as atualizações de segurança e patches para frameworks e bibliotecas.</li>
+        <li>Não educar desenvolvedores e usuários sobre práticas seguras na web.</li>
+    </ul>
+
+    <div class="big-button-container">
+      <h2>Gostaria de testar seu conhecimento sobre o assunto</h2>
+      <a href="quiz.html" class="big-button">Clique aqui para iniciar o Quiz</a>  <!-- MUDAR PARA PARTE DO IAGO -->
+  
+    </div>
+
+    <footer>
+        <div class="conteudo_footer">
+            <a class="links_footer" href="licoes.html">Lições</a>
+            <a class="links_footer" href="potencializa.html">Potencializador De Senhas</a>
+            <a class="links_footer" href="gerencia.html">Gerenciador De Senhas</a>
+            <a class="links_footer" href="verificacao.html">Verificação De Links</a>
+        </div>
+        <div class="titulo_footer">
+            <p>© 2024 NetGuard Inc. Todos os Direitos Reservados. Duvidas? Use o email suportenetguard@gmail.com</p>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('menuIcon').addEventListener('click', function() {
+          var menu = document.getElementById('menu');
+          if (menu.classList.contains('open')) {
+            menu.classList.remove('open');
+          } else {
+            menu.classList.add('open');
+          }
+        });
+      </script>
+</body>
+</html>
