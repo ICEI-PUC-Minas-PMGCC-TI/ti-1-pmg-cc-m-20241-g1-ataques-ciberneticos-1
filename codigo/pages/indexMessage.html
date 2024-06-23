@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Cadastro de Mensagens</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../assets/css/styleBot.css">
+</head>
+
+<body onload="init()">
+    <h1>Cadastro de Mensagens (CRUD)</h1>
+
+    <div class="container">
+        <div class="row">
+            <div id="msg" class="col-sm-10 offset-sm-1 ">
+
+            </div>
+        </div>
+
+        <form id="form-mensagem">
+            <div class="form-group row">
+                <div class="col-sm-4">
+                    <label for="inputId">Id</label>
+                    <input type="text" class="form-control" id="inputId" placeholder="ID" disabled>
+                </div>
+                <div class="col-sm-8">
+                    <label for="inputOpcao">Opção (*)</label>
+                    <input type="text" class="form-control" id="inputOpcao" required placeholder="Informe a opção da mensagem">
+                </div>
+            </div>
+            <div class="form-group row">
+                <div class="col-sm-5">
+                    <label for="inputCategoria">Categoria (*)</label>
+                    <input type="text" class="form-control" id="inputCategoria" required placeholder="Informe a categoria">
+                </div>
+                <div class="col-sm-7">
+                    <label for="inputTipo">Tipo (*)</label>
+                    <input type="text" class="form-control" id="inputTipo" required placeholder="Informe o tipo">
+                </div>
+            </div>
+            <div class="form-group row">
+                <div class="col-sm-6">
+                    <label for="inputData">Data</label>
+                    <input type="date" class="form-control" id="inputData" placeholder="Informe a data da mensagem">
+                </div>
+                <div class="col-sm-6">
+                    <label for="inputConteudo">Conteúdo</label>
+                    <input type="text" class="form-control" id="inputConteudo" required placeholder="Informe o conteúdo da mensagem">
+                </div>
+            </div>
+            <div class="form-group row">
+                <div class="col-sm-4">
+                    <small>(*) Campos obrigatórios</small>
+                </div>
+            </div>
+            <div class="form-group row">
+                <div class="col-sm-12">
+                    <input type="button" class="btn btn-success" id="btnInsert" value="Inserir">
+                    <input type="button" class="btn btn-warning" id="btnUpdate" value="Alterar">
+                    <input type="button" class="btn btn-danger" id="btnDelete" value="Excluir">
+                    <input type="button" class="btn btn-secondary" id="btnClear" value="Limpar Form">
+                    <a href="lista_mensagens.html"><input type="button" class="btn btn-warning" id="btnClear" value="Pesquisar Mensagens"></a>
+                </div>
+            </div>
+        </form>
+
+        <div class="row">
+            <div class="col-sm-12">
+                <table id="grid-mensagens" class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Opção</th>
+                            <th scope="col">Categoria</th>
+                            <th scope="col">Tipo</th>
+                            <th scope="col">Data</th>
+                            <th scope="col">Conteúdo</th>
+                        </tr>
+                    </thead>
+                    <tbody id="table-mensagens">
+                        <tr>
+                            <td scope="row">1</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+    <script src="../assets/js/mainCrud.js"></script>
+    <script>
+        function exibeMensagens() {
+            $("#table-mensagens").html("");
+
+            for (i = 0; i < db.data.length; i++) {
+                let mensagem = db.data[i];
+                $("#table-mensagens").append(`<tr><td scope="row">${mensagem.id}</td>
+                                                <td>${mensagem.opcao}</td>
+                                                <td>${mensagem.categoria}</td>
+                                                <td>${mensagem.tipo}</td>
+                                                <td>${mensagem.data}</td>
+                                                <td>${mensagem.conteudo}</td>
+                                            </tr>`);
+            }
+        }
+
+        function init() {
+            $("#btnInsert").click(function () {
+                if (!$('#form-mensagem')[0].checkValidity()) {
+                    displayMessage("Preencha o formulário corretamente.");
+                    return;
+                }
+
+                let campoOpcao = $("#inputOpcao").val();
+                let campoCategoria = $("#inputCategoria").val();
+                let campoTipo = $('#inputTipo').val();
+                let campoData = $("#inputData").val();
+                let campoConteudo = $('#inputConteudo').val();
+                let mensagem = {
+                    opcao: campoOpcao,
+                    categoria: campoCategoria,
+                    tipo: campoTipo,
+                    data: campoData,
+                    conteudo: campoConteudo
+                };
+
+                insertMensagem(mensagem);
+
+                exibeMensagens();
+                $("#form-mensagem")[0].reset();
+            });
+
+            $("#btnUpdate").click(function () {
+                let campoId = $("#inputId").val();
+                if (campoId == "") {
+                    displayMessage("Selecione uma mensagem para ser alterada.");
+                    return;
+                }
+                let campoOpcao = $("#inputOpcao").val();
+                let campoCategoria = $("#inputCategoria").val();
+                let campoTipo = $("#inputTipo").val();
+                let campoData = $("#inputData").val();
+                let campoConteudo = $('#inputConteudo').val();
+                let mensagem = {
+                    opcao: campoOpcao,
+                    categoria: campoCategoria,
+                    tipo: campoTipo,
+                    data: campoData,
+                    conteudo: campoConteudo
+                };
+
+                updateMensagem(parseInt(campoId), mensagem);
+
+                exibeMensagens();
+
+                $("#form-mensagem")[0].reset();
+            });
+
+            $("#btnDelete").click(function () {
+                let campoId = $("#inputId").val();
+                if (campoId == "") {
+                    displayMessage("Selecione uma mensagem a ser excluída.");
+                    return;
+                }
+                deleteMensagem(parseInt(campoId));
+
+                exibeMensagens();
+
+                $("#form-mensagem")[0].reset();
+            });
+
+            $("#btnClear").click(function () {
+                $("#form-mensagem")[0].reset();
+            });
+
+            $('#msg').bind("DOMSubtreeModified", function () {
+                window.setTimeout(function () {
+                    $(".alert").fadeTo(500, 0).slideUp(500, function () {
+                        $(this).remove();
+                    });
+                }, 5000);
+            });
+
+            $("#grid-mensagens").on("click", "tr", function (e) {
+                let linhaMensagem = this;
+                colunas = linhaMensagem.querySelectorAll("td");
+
+                $("#inputId").val(colunas[0].innerText);
+                $("#inputOpcao").val(colunas[1].innerText);
+                $("#inputCategoria").val(colunas[2].innerText);
+                $("#inputTipo").val(colunas[3].innerText);
+                $("#inputData").val(colunas[4].innerText);
+                $("#inputConteudo").val(colunas[5].innerText);
+            });
+
+            exibeMensagens();
+        }
+    </script>
+</body>
+
+</html>

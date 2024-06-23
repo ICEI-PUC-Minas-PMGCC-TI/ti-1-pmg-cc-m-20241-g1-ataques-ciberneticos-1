@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chatbot</title>
+    <link rel="shortcut icon" href="logo.ico" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Playwrite+NG+Modern:wght@100..400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/css/styleBot.css">
+    <link rel="stylesheet" href="../assets/css/global.css">
+</head>
+<body class="guilherme-body" onload="initializeChatbot()">
+    <!-- Cebeçalho -->
+    <header id="global-header">
+        <nav class="global-nav-bar">
+            <div class="global-logo">
+                <h1><a href="index.html">NetGuard</a></h1>
+            </div>
+            <div class="global-nav-list">
+                <ul>
+                    <li class="global-nav-item"><a href="licoes.html" class="global-nav-link">Lições</a></li>
+                    <li class="global-nav-item"><a href="potencializa.html" class="global-nav-link">Potencializador de Senha</a></li>
+                    <li class="global-nav-item"><a href="gerencializa.html" class="global-nav-link">Gerenciador de Senha</a></li>
+                    <li class="global-nav-item"><a href="verificacao.html" class="global-nav-link">Verificador de Links</a></li>
+                    <li class="global-nav-item"><a href="chatbot.html" class="global-nav-link">Chatbot</a></li>
+                </ul>
+            </div>
+            <div class="global-login-button">
+                <button><a href="cadastro.html">Entrar</a></button>
+            </div>
+
+            <div class="global-mobile-menu-icon">
+                <button onclick="menuShow()"><img class="global-icon" src="images/menu_white_36dp.svg" alt=""></button>
+            </div>
+        </nav>
+        <div class="global-mobile-menu">
+            <ul>
+                <li class="global-nav-item"><a href="licoes.html" class="global-nav-link">Lições</a></li>
+                <li class="global-nav-item"><a href="potencializa.html" class="global-nav-link">Potencializador de Senha</a></li>
+                <li class="global-nav-item"><a href="gerencializa.html" class="global-nav-link">Gerenciador de Senha</a></li>
+                <li class="global-nav-item"><a href="verificacao.html" class="global-nav-link">Verificador de Links</a></li>
+                <li class="global-nav-item"><a href="chatbot.html" class="global-nav-link">Chatbot</a></li>
+            </ul>
+
+            <div class="global-login-button">
+                <button><a href="cadastro.html">Entrar</a></button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Conteúdo: Chatbot -->
+    <main class="chat-container">
+        <div id="chat-box" class="chat-box"></div>
+        <div class="input-box">
+            <input type="text" id="user-input" placeholder="Digite um número de 1 a 5">
+            <button id="send-button" onclick="handleSendButtonClick()">Enviar</button>
+        </div>
+    </main>
+
+    <!-- Rodapé -->
+    <footer id="global-footer">
+        <div class="global-conteudo-footer">
+            <a class="global-links-footer" href="licoes.html">Lições</a>
+            <a class="global-links-footer" href="potencializa.html">Potencializador De Senhas</a>
+            <a class="global-links-footer" href="gerencia.html">Gerenciador De Senhas</a>
+            <a class="global-links-footer" href="verificacao.html">Verificação De Links</a>
+            <a class="global-links-footer" href="chatbot.html">Chatbot</a>
+        </div>
+        <div class="global-titulo-footer">
+            <p id="copy">
+                © 2024 NetGuard Inc. Todos os Direitos Reservados. Duvidas? Use o email suportenetguard@gmail.com
+            </p>
+        </div>
+    </footer>
+
+    <!-- Conectando o JS -->
+    <script src="../assets/js/global.js"></script>
+    <script src="../assets/js/mainBot.js"></script>
+</body>
+</html>
