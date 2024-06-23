@@ -1,0 +1,135 @@
+@import url("https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap");
+
+.Iago2 * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+.Iago2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.Iago2 .custom-container {
+    background: #fff;
+    padding: 20px 30px;
+    width: 420px;
+    max-width: 90%;
+    border-radius: 10px;
+    border-style: double;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+
+.Iago2 .custom-container header {
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 33px;
+}
+
+.Iago2 .custom-container form {
+    margin: 20px 5px 10px 5px;
+    position: relative;
+}
+
+.Iago2 .custom-container form .field-container {
+    height: 45px;
+    width: 100%;
+    display: flex;
+    position: relative;
+}
+
+.Iago2 form .field-container input {
+    width: 100%;
+    height: 100%;
+    border: 1px solid lightgrey;
+    padding-left: 15px;
+    outline: none;
+    border-radius: 5px;
+    font-size: 17px;
+    transition: all 0.3s;
+}
+
+.Iago2 form .field-container input:focus {
+    border-color: #27ae60;
+    box-shadow: inset 0 0 3px #2fd072;
+}
+
+.Iago2 form .field-container .showBtn {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    display: none;
+    user-select: none;
+}
+
+.Iago2 form .strength-indicator {
+    height: 10px;
+    margin: 10px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    display: none;
+}
+
+.Iago2 form .strength-indicator span {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    background: lightgrey;
+    border-radius: 5px;
+}
+
+.Iago2 form .strength-indicator span:nth-child(2) {
+    margin: 0 3px;
+}
+
+.Iago2 form .strength-indicator span.active:before {
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    border-radius: 5px;
+}
+
+.Iago2 .strength-indicator span.weak:before {
+    background-color: #ff4757;
+}
+
+.Iago2 .strength-indicator span.medium:before {
+    background-color: orange;
+}
+
+.Iago2 .strength-indicator span.strong:before {
+    background-color: #23ad5c;
+}
+
+.Iago2 form .strength-text {
+    font-size: 20px;
+    font-weight: 500;
+    display: none;
+    margin-bottom: -10px;
+}
+
+.Iago2 form .strength-text.weak {
+    color: #ff4757;
+}
+
+.Iago2 form .strength-text.medium {
+    color: orange;
+}
+
+.Iago2 form .strength-text.strong {
+    color: #23ad5c;
+}

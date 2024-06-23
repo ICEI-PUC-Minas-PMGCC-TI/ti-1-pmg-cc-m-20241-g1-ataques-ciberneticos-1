@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../assets/css/styleQuiz.css">
+    <title>Quiz</title>
+</head>
+
+<body class="Iago3">
+    <div class="quiz-container">
+        <h2>Teste seu conhecimento</h2>
+        <h1>Quiz: <u>Falsificação de solicitação no servidor</u></h1>
+        <button class="quiz-button" onclick="startQuiz()">Iniciar Quiz</button>
+        <button class="quiz-button" onclick="goToMainPage()">Quero revisar o material</button>
+    </div>
+
+    <div class="question-container" style="display: none;">
+        <h2 id="question"></h2>
+        <div id="options"></div>
+    </div>
+
+    <div id="result" style="display: none;">
+        <h2>Resultado do Quiz</h2>
+        <p id="score"></p>
+        <div id="message"></div>
+        <button id="retryButton" style="display: none;" class="quiz-button" onclick="goToQuiz()">Tentar
+            Novamente</button>
+        <button id="homeButton" style="display: none;" class="quiz-button" onclick="goToMainPage()">Agora Não</button>
+    </div>
+
+    <div id="congratsMessage" style="display: none;">
+        <h2>Parabéns! Você acertou todas as questões!</h2>
+        <button class="quiz-button" onclick="goToMainPage()">Voltar ao Início</button>
+    </div>
+
+
+    <script src="../assets/js/scriptFalsificaçãoSQuiz.js"></script>
+</body>
+
+</html>
