@@ -1,25 +1,8 @@
 .guilherme-body {
-  font-family: Arial, sans-serif;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
-  height: 100vh;
   background-color: #f4f4f4;
-  margin: 0;
-}
-
-.guilherme-header {
-  width: 100%;
-  background-color: #333;
-  color: white;
-  padding: 10px 0;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  position: fixed;
-  top: 0;
-  left: 0;
 }
 
 .guilherme-img {
@@ -45,17 +28,6 @@ nav ul li a {
 
 nav ul li a:hover {
   text-decoration: underline;
-}
-
-.guilherme-footer {
-  width: 100%;
-  background-color: #333;
-  color: white;
-  text-align: center;
-  padding: 10px 0;
-  position: fixed;
-  bottom: 0;
-  left: 0;
 }
 
 .chat-container {

@@ -1,5 +1,5 @@
 function initializeChatbot() {
-    addMessage('bot', 'Olá, eu sou o GuardBot. Irei te ajudar a manter-se mais seguro(a) na internet!\nSelecione uma das opções abaixo:\n1. Ataque DDoS\n\n2. Injeção SQL\n3. Spam\n4. Phishing\n5. Engenharia Social');
+    addMessage('bot', 'Olá, eu sou o GuardBot. Irei te ajudar a manter-se mais seguro(a) na internet!\nSelecione uma das opções abaixo:\n1. Ataque DDoS\n2. Injeção SQL\n3. Spam\n4. Phishing\n5. Engenharia Social');
 }
 
 function handleSendButtonClick() {
@@ -27,10 +27,13 @@ function addMessage(sender, text, imageUrl = null, sourceUrl = null) {
     const img = document.createElement('img');
     img.src = sender === 'bot' ? '../assets/images/bot.png' : '../assets/images/botuser.png';
     img.alt = sender === 'bot' ? 'Bot' : 'Usuário';
+    img.style.width = '50px';
+    img.style.height = '50px';
 
     const messageContent = document.createElement('div');
     messageContent.className = 'message-content';
-    messageContent.textContent = text;
+
+    messageContent.innerHTML = text.replace(/\n/g, '<br>');
 
     message.appendChild(img);
     message.appendChild(messageContent);
@@ -58,7 +61,9 @@ function addMessage(sender, text, imageUrl = null, sourceUrl = null) {
         const image = document.createElement('img');
         image.src = imageUrl;
         image.alt = 'Imagem da resposta do bot';
-        
+        image.style.width = '200px';
+        image.style.height = 'auto';
+
         imageMessage.appendChild(img.cloneNode());
         imageMessage.appendChild(image);
 
