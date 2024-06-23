@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Playwrite+NG+Modern:wght@100..400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/ataques.css">
+    <link rel="shortcut icon" href="../images/logo.ico" type="image/x-icon">
+    <title>Sequestro de Cliques</title>
+    <style>
+        body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      margin: 0;
+    }
+    h1, h2, h3, p, code {
+      margin-bottom: 15px;
+    }
+    code {
+        width: 40%;
+    }
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #f8f9fa;
+      padding: 20px;
+      width: 100%;
+      top: 0;
+      z-index: 1000;
+    }
+    .header a {
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 1.5rem;
+    }
+
+    .menu-icon {
+      display: none;
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
+    .menu {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+    }
+    .menu li {
+      margin-right: 20px;
+    }
+    .menu li a {
+      text-decoration: none;
+      color: #333;
+      font-weight: bold;
+    }
+
+    .big-button-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      width: 100%;
+      margin-top: 20px;
+    }
+    .big-button {
+      padding: 20px 40px;
+      font-size: 1.5rem;
+      color: white;
+      background-color: #007BFF;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      text-decoration: none;
+      text-align: center;
+      margin-top: 20px; /* Margin added for spacing */
+    }
+    .big-button:hover {
+      background-color: #0056b3;
+    }
+    @media (max-width: 768px) {
+      .menu {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        background-color: #f8f9fa;
+        border-top: 1px solid #ccc;
+      }
+      .menu.open {
+        display: flex;
+      }
+      .menu li {
+        margin-right: 0;
+        text-align: center;
+        padding: 10px 0;
+        border-bottom: 1px solid #ccc;
+      }
+      .menu-icon {
+        display: block;
+      }
+    }
+    footer {
+      margin-top: 20px;
+      width: 100%;
+    }
+    </style>
+</head>
+
+<header class="header">
+    <a class="NetGuard" href="../../index.html">NetGuard</a>
+    <div class="menu-icon" id="menuIcon">&#9776;</div>
+    <nav>
+      <ul class="menu" id="menu">
+        <li><a class="header_link" href="licoes.html">Lições</a></li>
+        <li><a class="header_link" href="potencializa.html">Potencializador de Senha</a></li>
+        <li><a class="header_link" href="gerencia.html">Gerenciador de Senha</a></li>
+        <li><a class="header_link" href="verificacao.html">Verificação de Links</a></li>
+      </ul>
+    </nav>
+  </header>
+
+<body>
+    <h1>Sequestro de Cliques (Clickjacking)</h1>
+    <p>O sequestro de cliques, também conhecido como clickjacking, é um tipo de ataque em que um usuário é induzido a clicar em algo diferente do que ele percebe, potencialmente revelando informações confidenciais ou permitindo ações não intencionais em aplicações web.</p>
+    
+    <h2>Riscos</h2>
+    <ul>
+        <li>Roubo de informações pessoais ou financeiras.</li>
+        <li>Realização de ações não autorizadas em sites, como transferências bancárias.</li>
+        <li>Instalação de malware no dispositivo do usuário.</li>
+        <li>Comprometimento da privacidade e segurança dos usuários.</li>
+    </ul>
+    
+    <h2>Como os Hackers Executam o Ataque</h2>
+    <p>Os hackers geralmente seguem estes passos para realizar um ataque de sequestro de cliques:</p>
+    <ol>
+        <li>Criam uma página web maliciosa contendo um iframe invisível ou opaco que carrega o site alvo.</li>
+        <li>Posicionam elementos enganosos sobre o iframe para induzir o usuário a clicar em áreas específicas.</li>
+        <li>Quando o usuário clica, ele interage na verdade com o site carregado no iframe, executando ações indesejadas.</li>
+    </ol>
+    
+    <h2>Exemplo de Código Vulnerável</h2>
+    <div class="code-example">
+        <code>
+            &lt;!-- Página maliciosa --&gt;<br>
+            &lt;html&gt;<br>
+            &lt;body&gt;<br>
+            &lt;div style="opacity:0.01; position:absolute; top:0; left:0; width:100%; height:100%;"&gt;<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&lt;iframe src="https://site-alvo.com" style="width:100%; height:100%;"&gt;&lt;/iframe&gt;<br>
+            &lt;/div&gt;<br>
+            &lt;button style="position:relative; z-index:2;"&gt;Clique aqui para ganhar um prêmio!&lt;/button&gt;<br>
+            &lt;/body&gt;<br>
+            &lt;/html&gt;
+        </code>
+    </div>
+    <p>No exemplo acima, o botão visível leva o usuário a clicar em áreas específicas do iframe invisível, realizando ações no site alvo.</p>
+    
+    <h2>Exemplo de Código Seguro</h2>
+    <div class="code-example">
+        <code>
+            &lt;!-- Cabeçalho HTTP seguro --&gt;<br>
+            &lt;?php<br>
+            header('X-Frame-Options: DENY');<br>
+            ?&gt;<br><br>
+            &lt;!-- Ou usando Content Security Policy (CSP) --&gt;<br>
+            &lt;meta http-equiv="Content-Security-Policy" content="frame-ancestors 'self'"&gt;
+        </code>
+    </div>
+    <p>O código acima usa o cabeçalho HTTP <code>X-Frame-Options</code> e a política de segurança de conteúdo <code>Content-Security-Policy</code> para impedir que a página seja carregada em iframes, mitigando o ataque de clickjacking.</p>
+    
+    <h2>Boas Práticas</h2>
+    <ul>
+        <li>Utilizar o cabeçalho HTTP <code>X-Frame-Options</code> com valor <code>DENY</code> ou <code>SAMEORIGIN</code>.</li>
+        <li>Implementar a política de segurança de conteúdo (CSP) com <code>frame-ancestors 'self'</code>.</li>
+        <li>Verificar se a aplicação está protegida contra clickjacking utilizando ferramentas de segurança e testes manuais.</li>
+        <li>Educar os usuários sobre os riscos de clicar em links ou botões suspeitos.</li>
+    </ul>
+    
+    <h2>Más Práticas</h2>
+    <ul>
+        <li>Permitir que a página seja carregada em iframes de qualquer origem.</li>
+        <li>Não utilizar cabeçalhos de segurança HTTP.</li>
+        <li>Confiar apenas em verificações do lado do cliente para proteger contra ataques.</li>
+        <li>Ignorar a necessidade de testes de segurança regulares.</li>
+    </ul>
+
+    <div class="big-button-container">
+      <h2>Gostaria de testar seu conhecimento sobre o assunto</h2>
+      <a href="quiz.html" class="big-button">Clique aqui para iniciar o Quiz</a>  <!-- MUDAR PARA PARTE DO IAGO -->
+  
+    </div>
+
+    <footer>
+        <div class="conteudo_footer">
+            <a class="links_footer" href="licoes.html">Lições</a>
+            <a class="links_footer" href="potencializa.html">Potencializador De Senhas</a>
+            <a class="links_footer" href="gerencia.html">Gerenciador De Senhas</a>
+            <a class="links_footer" href="verificacao.html">Verificação De Links</a>
+        </div>
+        <div class="titulo_footer">
+            <p>© 2024 NetGuard Inc. Todos os Direitos Reservados. Duvidas? Use o email suportenetguard@gmail.com</p>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('menuIcon').addEventListener('click', function() {
+          var menu = document.getElementById('menu');
+          if (menu.classList.contains('open')) {
+            menu.classList.remove('open');
+          } else {
+            menu.classList.add('open');
+          }
+        });
+      </script>
+</body>
+</html>

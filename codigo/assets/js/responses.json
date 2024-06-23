@@ -1,0 +1,94 @@
+{
+    "header": {
+      "logoUrl": "logo.png",
+      "menuItems": [
+        {
+          "text": "Home",
+          "url": "index.html"
+        },
+        {
+          "text": "Sobre Nós",
+          "url": "sobre.html"
+        }
+      ]
+    },
+    "titulo": {
+      "textoPrincipal": "Evite Ataques Cibernéticos",
+      "subtitulo": "Estratégias e Soluções para Proteger seu Espaço Digital com Net Guard",
+      "botoes": [
+        {
+          "text": "Conscientização",
+          "url": "#conscientizacao",
+          "class": "btn btn-primary"
+        },
+        {
+          "text": "Sobre Mim",
+          "url": "sobre.html",
+          "class": "btn btn-secondary",
+          "target": "_blank"
+        }
+      ]
+    },
+    "solucoes": [
+      {
+        "titulo": "Potencializador de Senha",
+        "descricao": "Melhora a força de suas senhas, tornando-as mais seguras contra ataques.",
+        "url": "potencializa.html"
+      },
+      {
+        "titulo": "Gerenciador de Senha",
+        "descricao": "Armazena e organiza suas senhas de forma segura e acessível.",
+        "url": "gerencia.html"
+      },
+      {
+        "titulo": "Verificação de Links",
+        "descricao": "Analisa links para identificar possíveis ameaças e manter sua navegação segura.",
+        "url": "verificacao.html"
+      }
+    ],
+    "noticias": [
+      {
+        "titulo": "Vazamento de dados: o que é, como ocorre e como se proteger",
+        "resumo": "O vazamento de dados é um problema que, infelizmente, vem se tornando cada vez mais comum...",
+        "data": "27/10/2022",
+        "fonte": "cora.com",
+        "url": "https://www.cora.com.br/blog/vazamento-de-dados/"
+      },
+      {
+        "titulo": "Segurança na Internet: conheça 6 maneiras para se proteger de vazamento de dados",
+        "resumo": "Ataques ocorrem na tentativa de criminosos de obter ganhos financeiros até a exposição...",
+        "data": "22/08/2023",
+        "fonte": "exame.com",
+        "url": "https://exame.com/tecnologia/seguranca-na-internet-conheca-6-maneiras-para-se-proteger-de-vazamento-de-dados/"
+      },
+      {
+        "titulo": "26 bilhões de dados: veja se você está no maior vazamento da história",
+        "resumo": "O vazamento de dados de usuários de plataformas como X (antigo Twitter) e Telegram...",
+        "data": "23/01/2024",
+        "fonte": "olhardigital.com.br",
+        "url": "https://olhardigital.com.br/2024/01/23/seguranca/26-bilhoes-de-dados-veja-se-voce-esta-no-maior-vazamento-da-historia/#google_vignette"
+      },
+      {
+        "titulo": "Facebook é condenado a pagar R$ 20 milhões por vazamento de dados de usuários",
+        "resumo": "A Justiça de Minas Gerais condenou o Facebook por dano moral coletivo e individual...",
+        "data": "27/07/2023",
+        "fonte": "cnnbrasil.com.br",
+        "url": "https://www.cnnbrasil.com.br/nacional/facebook-e-condenado-a-pagar-r-20-milhoes-por-vazamento-de-dados-de-usuarios/"
+      },
+      {
+        "titulo": "Nova Falha de Segurança no WhatsApp Expõe Usuários a Ataques",
+        "resumo": "Uma recente vulnerabilidade descoberta no WhatsApp permite que hackers acessem dados...",
+        "data": "10/04/2024",
+        "fonte": "tecmundo.com.br",
+        "url": "https://www.tecmundo.com.br/seguranca/2024/04/10/nova-falha-seguranca-whatsapp-expoe-usuarios-ataques.htm"
+      },
+      {
+        "titulo": "Ataques de Phishing Crescem 50% em 2024, Alerta Relatório",
+        "resumo": "Um novo relatório de segurança aponta um aumento significativo nos ataques de phishing...",
+        "data": "05/03/2024",
+        "fonte": "g1.globo.com",
+        "url": "https://g1.globo.com/tecnologia/noticia/2024/03/05/ataques-phishing-crescem-50-2024-alerta-relatorio.htm"
+      }
+    ]
+  }
+  

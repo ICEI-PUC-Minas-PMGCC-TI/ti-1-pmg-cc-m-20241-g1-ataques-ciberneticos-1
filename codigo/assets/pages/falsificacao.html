@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Playwrite+NG+Modern:wght@100..400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/ataques.css">
+    <link rel="shortcut icon" href="../images/logo.ico" type="image/x-icon">
+    <title>Falsificação de E-mail</title>
+    <style>
+     body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      margin: 0;
+    }
+    h1, h2, h3, p, code {
+      margin-bottom: 15px;
+    }
+    code {
+        width: 40%;
+    }
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #f8f9fa;
+      padding: 20px;
+      width: 100%;
+      top: 0;
+      z-index: 1000;
+    }
+    .header a {
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 1.5rem;
+    }
+
+    .menu-icon {
+      display: none;
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
+    .menu {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+    }
+    .menu li {
+      margin-right: 20px;
+    }
+    .menu li a {
+      text-decoration: none;
+      color: #333;
+      font-weight: bold;
+    }
+
+    .big-button-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      width: 100%;
+      margin-top: 20px;
+    }
+    .big-button {
+      padding: 20px 40px;
+      font-size: 1.5rem;
+      color: white;
+      background-color: #007BFF;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      text-decoration: none;
+      text-align: center;
+      margin-top: 20px; /* Margin added for spacing */
+    }
+    .big-button:hover {
+      background-color: #0056b3;
+    }
+    @media (max-width: 768px) {
+      .menu {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        background-color: #f8f9fa;
+        border-top: 1px solid #ccc;
+      }
+      .menu.open {
+        display: flex;
+      }
+      .menu li {
+        margin-right: 0;
+        text-align: center;
+        padding: 10px 0;
+        border-bottom: 1px solid #ccc;
+      }
+      .menu-icon {
+        display: block;
+      }
+    }
+    footer {
+      margin-top: 20px;
+      width: 100%;
+    }
+    </style>
+</head>
+<body>
+ 
+  <header class="header">
+    <a class="NetGuard" href="../../index.html">NetGuard</a>
+    <div class="menu-icon" id="menuIcon">&#9776;</div>
+    <nav>
+      <ul class="menu" id="menu">
+        <li><a class="header_link" href="licoes.html">Lições</a></li>
+        <li><a class="header_link" href="potencializa.html">Potencializador de Senha</a></li>
+        <li><a class="header_link" href="gerencia.html">Gerenciador de Senha</a></li>
+        <li><a class="header_link" href="verificacao.html">Verificação de Links</a></li>
+      </ul>
+    </nav>
+  </header>
+
+        <h1>Falsificação de E-mail</h1>
+        <p>A falsificação de e-mail, também conhecida como spoofing, é uma técnica usada por atacantes para enganar os destinatários, fazendo-os acreditar que a mensagem foi enviada de uma fonte confiável. Isso é frequentemente usado em ataques de phishing para roubar informações sensíveis ou espalhar malware.</p>
+
+        <h2>Como Funciona?</h2>
+        <p>Os atacantes podem falsificar o cabeçalho do e-mail para que pareça ter sido enviado de um endereço legítimo. Eles utilizam servidores de e-mail configurados incorretamente ou comprometidos para enviar essas mensagens fraudulentas.</p>
+
+        <h2>Riscos</h2>
+        <ul>
+            <li>Roubo de informações pessoais e financeiras</li>
+            <li>Disseminação de malware</li>
+            <li>Comprometimento de contas de e-mail</li>
+            <li>Perda de confiança em sistemas de comunicação</li>
+        </ul>
+
+        <h2>Exemplos de Código</h2>
+        <p>Um exemplo de e-mail falsificado pode ser criado com ferramentas como <strong>sendmail</strong> no Linux:</p>
+        <div class="code-example">
+            <pre>
+To: vitima@example.com
+From: banco@legitimo.com
+Subject: Atualização de Segurança
+
+Prezado cliente,
+
+Por favor, clique no link abaixo para atualizar suas informações de segurança:
+http://phishing-site.com
+
+Atenciosamente,
+Seu Banco
+            </pre>
+        </div>
+
+        <p>Os atacantes podem usar scripts em linguagens de programação para enviar e-mails falsificados. Veja um exemplo em Python usando a biblioteca <strong>smtplib</strong>:</p>
+        <div class="code-example">
+            <pre>
+import smtplib
+from email.mime.text import MIMEText
+
+def send_spoofed_email():
+    msg = MIMEText('Este é o corpo do e-mail')
+    msg['Subject'] = 'Assunto do E-mail'
+    msg['From'] = 'banco@legitimo.com'
+    msg['To'] = 'vitima@example.com'
+
+    with smtplib.SMTP('smtp.server.com') as server:
+        server.sendmail(msg['From'], [msg['To']], msg.as_string())
+
+send_spoofed_email()
+            </pre>
+        </div>
+
+        <h2>Boas Práticas</h2>
+        <ul>
+            <li>Configure corretamente os registros SPF, DKIM e DMARC para autenticação de e-mails.</li>
+            <li>Eduque os usuários sobre como identificar e-mails falsificados.</li>
+            <li>Utilize ferramentas de filtragem de e-mail para detectar e bloquear e-mails de spoofing.</li>
+        </ul>
+
+        <h2>Más Práticas</h2>
+        <ul>
+            <li>Ignorar a configuração de registros SPF, DKIM e DMARC.</li>
+            <li>Não educar os usuários sobre os riscos de e-mails falsificados.</li>
+            <li>Permitir que servidores de e-mail sejam mal configurados e vulneráveis a abusos.</li>
+        </ul>
+        
+        <div class="big-button-container">
+          <h2>Gostaria de testar seu conhecimento sobre o assunto</h2>
+          <a href="quiz.html" class="big-button">Clique aqui para iniciar o Quiz</a>  <!-- MUDAR PARA PARTE DO IAGO -->
+      
+        </div>
+      
+        <footer>
+          <div class="conteudo_footer">
+              <a class="links_footer" href="licoes.html">Lições</a>
+              <a class="links_footer" href="potencializa.html">Potencializador De Senhas</a>
+              <a class="links_footer" href="gerencia.html">Gerenciador De Senhas</a>
+              <a class="links_footer" href="verificacao.html">Verificação De Links</a>
+          </div>
+          <div class="titulo_footer">
+              <p>© 2024 NetGuard Inc. Todos os Direitos Reservados. Duvidas? Use o email suportenetguard@gmail.com</p>
+          </div>
+        </footer>
+      
+        <script>
+          document.getElementById('menuIcon').addEventListener('click', function() {
+            var menu = document.getElementById('menu');
+            if (menu.classList.contains('open')) {
+              menu.classList.remove('open');
+            } else {
+              menu.classList.add('open');
+            }
+          });
+        </script>
+</body>
+</html>

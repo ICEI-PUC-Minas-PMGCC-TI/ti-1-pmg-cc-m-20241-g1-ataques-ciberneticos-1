@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Playwrite+NG+Modern:wght@100..400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/ataques.css">
+    <link rel="shortcut icon" href="../images/logo.ico" type="image/x-icon">
+    <title>Falsificação de Solicitação no Servidor</title>
+    <style>
+     body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      margin: 0;
+    }
+    h1, h2, h3, p, code {
+      margin-bottom: 15px;
+    }
+    code {
+        width: 40%;
+    }
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #f8f9fa;
+      padding: 20px;
+      width: 100%;
+      top: 0;
+      z-index: 1000;
+    }
+    .header a {
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 1.5rem;
+    }
+
+    .menu-icon {
+      display: none;
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
+    .menu {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+    }
+    .menu li {
+      margin-right: 20px;
+    }
+    .menu li a {
+      text-decoration: none;
+      color: #333;
+      font-weight: bold;
+    }
+
+    .big-button-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      width: 100%;
+      margin-top: 20px;
+    }
+    .big-button {
+      padding: 20px 40px;
+      font-size: 1.5rem;
+      color: white;
+      background-color: #007BFF;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      text-decoration: none;
+      text-align: center;
+      margin-top: 20px; /* Margin added for spacing */
+    }
+    .big-button:hover {
+      background-color: #0056b3;
+    }
+    @media (max-width: 768px) {
+      .menu {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        background-color: #f8f9fa;
+        border-top: 1px solid #ccc;
+      }
+      .menu.open {
+        display: flex;
+      }
+      .menu li {
+        margin-right: 0;
+        text-align: center;
+        padding: 10px 0;
+        border-bottom: 1px solid #ccc;
+      }
+      .menu-icon {
+        display: block;
+      }
+    }
+    footer {
+      margin-top: 20px;
+      width: 100%;
+    }
+    </style>
+</head>
+
+<header class="header">
+    <a class="NetGuard" href="../../index.html">NetGuard</a>
+    <div class="menu-icon" id="menuIcon">&#9776;</div>
+    <nav>
+      <ul class="menu" id="menu">
+        <li><a class="header_link" href="licoes.html">Lições</a></li>
+        <li><a class="header_link" href="potencializa.html">Potencializador de Senha</a></li>
+        <li><a class="header_link" href="gerencia.html">Gerenciador de Senha</a></li>
+        <li><a class="header_link" href="verificacao.html">Verificação de Links</a></li>
+      </ul>
+    </nav>
+  </header>
+
+<body>
+    <h1>Falsificação de Solicitação no Servidor (SSRF)</h1>
+    <p>A falsificação de solicitação no servidor (Server-Side Request Forgery, SSRF) é um tipo de ataque onde um invasor consegue induzir um servidor a fazer requisições para um domínio arbitrário, incluindo sistemas internos que normalmente não seriam acessíveis externamente.</p>
+    
+    <h2>Riscos</h2>
+    <ul>
+        <li>Acesso a redes internas e não expostas ao público.</li>
+        <li>Exploração de serviços internos vulneráveis.</li>
+        <li>Obtenção de informações sensíveis do servidor.</li>
+        <li>Executar comandos em sistemas internos por meio de endpoints vulneráveis.</li>
+        <li>Desvio de tráfego e ataques de negação de serviço internos.</li>
+    </ul>
+    
+    <h2>Como os Hackers Executam o Ataque</h2>
+    <p>Os hackers podem executar ataques SSRF de várias maneiras, incluindo:</p>
+    <ol>
+        <li>Explorando formulários ou endpoints que aceitam URLs como entrada.</li>
+        <li>Utilizando a entrada de dados para fazer com que o servidor acesse URLs controladas pelo invasor.</li>
+        <li>Manipulando solicitações para acessar serviços internos e explorar vulnerabilidades.</li>
+    </ol>
+    
+    <h2>Exemplo de Código Vulnerável</h2>
+    <div class="code-example">
+        <code>
+            &lt;!-- Exemplo de código PHP vulnerável a SSRF --&gt;<br>
+            &lt;?php<br>
+            $url = $_GET['url'];<br>
+            <br>
+            // Baixa o conteúdo da URL fornecida pelo usuário<br>
+            $content = file_get_contents($url);<br>
+            <br>
+            echo $content;<br>
+            ?&gt;
+        </code>
+    </div>
+    <p>No exemplo acima, a entrada do usuário não é validada, permitindo que um invasor forneça uma URL maliciosa que o servidor acessará.</p>
+    
+    <h2>Exemplo de Código Seguro</h2>
+    <div class="code-example">
+        <code>
+            &lt;!-- Exemplo de código PHP seguro contra SSRF --&gt;<br>
+            &lt;?php<br>
+            $url = $_GET['url'];<br>
+            <br>
+            // Lista de URLs permitidas<br>
+            $allowed_urls = [<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;'https://exemplo.com/api',<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;'https://outroexemplo.com/data'<br>
+            ];<br>
+            <br>
+            if (in_array($url, $allowed_urls)) {<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;$content = file_get_contents($url);<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;echo $content;<br>
+            } else {<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;echo 'URL não permitida';<br>
+            }<br>
+            ?&gt;
+        </code>
+    </div>
+    <p>No exemplo acima, a URL fornecida pelo usuário é validada contra uma lista de URLs permitidas, mitigando o risco de SSRF.</p>
+    
+    <h2>Boas Práticas</h2>
+    <ul>
+        <li>Validar e sanitizar todas as entradas do usuário.</li>
+        <li>Utilizar listas de URLs permitidas (whitelisting) em vez de listas de URLs bloqueadas (blacklisting).</li>
+        <li>Restringir a saída de requisições do servidor para domínios externos e não confiáveis.</li>
+        <li>Implementar controles de acesso robustos para serviços internos.</li>
+        <li>Monitorar e registrar todas as requisições de saída do servidor.</li>
+        <li>Utilizar serviços e bibliotecas atualizadas e corrigidas.</li>
+    </ul>
+    
+    <h2>Más Práticas</h2>
+    <ul>
+        <li>Permitir que usuários forneçam URLs arbitrárias sem validação.</li>
+        <li>Confiar em validações apenas no lado do cliente.</li>
+        <li>Ignorar a necessidade de monitoramento de requisições de saída.</li>
+        <li>Não atualizar e corrigir serviços e bibliotecas regularmente.</li>
+        <li>Não restringir o acesso do servidor a recursos internos e sensíveis.</li>
+    </ul>
+
+    <div class="big-button-container">
+      <h2>Gostaria de testar seu conhecimento sobre o assunto</h2>
+      <a href="quiz.html" class="big-button">Clique aqui para iniciar o Quiz</a>  <!-- MUDAR PARA PARTE DO IAGO -->
+  
+    </div>
+
+  <footer>
+    <div class="conteudo_footer">
+        <a class="links_footer" href="licoes.html">Lições</a>
+        <a class="links_footer" href="potencializa.html">Potencializador De Senhas</a>
+        <a class="links_footer" href="gerencia.html">Gerenciador De Senhas</a>
+        <a class="links_footer" href="verificacao.html">Verificação De Links</a>
+    </div>
+    <div class="titulo_footer">
+        <p>© 2024 NetGuard Inc. Todos os Direitos Reservados. Duvidas? Use o email suportenetguard@gmail.com</p>
+    </div>
+</footer>
+
+<script>
+    document.getElementById('menuIcon').addEventListener('click', function() {
+      var menu = document.getElementById('menu');
+      if (menu.classList.contains('open')) {
+        menu.classList.remove('open');
+      } else {
+        menu.classList.add('open');
+      }
+    });
+  </script>
+</body>
+</html>

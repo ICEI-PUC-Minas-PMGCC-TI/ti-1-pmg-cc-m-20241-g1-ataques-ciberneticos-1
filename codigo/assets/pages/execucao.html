@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/ataques.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playwrite+NG+Modern:wght@100..400&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="../images/logo.ico" type="image/x-icon">
+    <title>Ataque de Execução de Comando</title>
+    <style>
+       body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      margin: 0;
+    }
+    h1, h2, h3, p, code {
+      margin-bottom: 15px;
+    }
+    code {
+        width: 40%;
+    }
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #f8f9fa;
+      padding: 20px;
+      width: 100%;
+      top: 0;
+      z-index: 1000;
+    }
+    .header a {
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 1.5rem;
+    }
+
+    .menu-icon {
+      display: none;
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
+    .menu {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+    }
+    .menu li {
+      margin-right: 20px;
+    }
+    .menu li a {
+      text-decoration: none;
+      color: #333;
+      font-weight: bold;
+    }
+
+    .big-button-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      width: 100%;
+      margin-top: 20px;
+    }
+    .big-button {
+      padding: 20px 40px;
+      font-size: 1.5rem;
+      color: white;
+      background-color: #007BFF;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      text-decoration: none;
+      text-align: center;
+      margin-top: 20px; /* Margin added for spacing */
+    }
+    .big-button:hover {
+      background-color: #0056b3;
+    }
+    @media (max-width: 768px) {
+      .menu {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        background-color: #f8f9fa;
+        border-top: 1px solid #ccc;
+      }
+      .menu.open {
+        display: flex;
+      }
+      .menu li {
+        margin-right: 0;
+        text-align: center;
+        padding: 10px 0;
+        border-bottom: 1px solid #ccc;
+      }
+      .menu-icon {
+        display: block;
+      }
+    }
+    footer {
+      margin-top: 20px;
+      width: 100%;
+    }
+    </style>
+<header class="header">
+    <a class="NetGuard" href="../../index.html">NetGuard</a>
+    <div class="menu-icon" id="menuIcon">&#9776;</div>
+    <nav>
+      <ul class="menu" id="menu">
+        <li><a class="header_link" href="licoes.html">Lições</a></li>
+        <li><a class="header_link" href="potencializa.html">Potencializador de Senha</a></li>
+        <li><a class="header_link" href="gerencia.html">Gerenciador de Senha</a></li>
+        <li><a class="header_link" href="verificacao.html">Verificação de Links</a></li>
+      </ul>
+    </nav>
+  </header>
+
+</head>
+<body>
+    <h1>Ataque de Execução de Comando</h1>
+
+    <div class="section">
+        <h2>O que é um Ataque de Execução de Comando?</h2>
+        <p>
+            Um ataque de execução de comando ocorre quando um atacante é capaz de executar comandos arbitrários no sistema operacional do servidor alvo. Isso pode ocorrer devido a falhas no código da aplicação, que permite a injeção de comandos de forma insegura.
+        </p>
+    </div>
+
+    <div class="section">
+        <h2>Riscos</h2>
+        <p>
+            Os riscos associados a ataques de execução de comando incluem:
+        </p>
+        <ul>
+            <li>Comprometimento total do servidor.</li>
+            <li>Roubo de dados sensíveis.</li>
+            <li>Alteração ou destruição de dados.</li>
+            <li>Utilização do servidor para ataques contra outros sistemas.</li>
+        </ul>
+    </div>
+
+    <div class="section">
+        <h2>Como os Hackers Executam este Tipo de Ataque</h2>
+        <p>
+            Hackers exploram vulnerabilidades em aplicações que executam comandos do sistema operacional com base em entradas do usuário sem validação adequada. Abaixo estão exemplos de código vulnerável em diferentes linguagens de programação:
+        </p>
+    </div>
+
+    <div class="section">
+        <h2>Exemplos de Código Vulnerável</h2>
+        <h3>PHP</h3>
+        <pre><code class="language-php">
+&lt;?php
+$command = $_GET['cmd'];
+system($command);
+?&gt;
+        </code></pre>
+
+        <h3>Python</h3>
+        <pre><code class="language-python">
+import os
+command = input("Enter the command: ")
+os.system(command)
+        </code></pre>
+    </div>
+
+    <div class="section">
+        <h2>Boas Práticas para Prevenção</h2>
+        <ul>
+            <li>Evitar o uso de funções que executam comandos do sistema operacional com base em entradas do usuário.</li>
+            <li>Validar e sanitizar todas as entradas do usuário.</li>
+            <li>Utilizar bibliotecas ou funções seguras específicas para a tarefa desejada, em vez de comandos de shell.</li>
+            <li>Implementar o princípio do menor privilégio, limitando os privilégios do processo que executa os comandos.</li>
+        </ul>
+    </div>
+
+    <div class="section">
+        <h2>Más Práticas</h2>
+        <ul>
+            <li>Executar comandos do sistema operacional diretamente com base em entradas do usuário.</li>
+            <li>Não validar ou sanitizar as entradas do usuário.</li>
+            <li>Executar processos com privilégios elevados desnecessariamente.</li>
+        </ul>
+    </div>
+
+    <div class="section">
+        <h2>Exemplos de Código Seguro</h2>
+        <h3>PHP</h3>
+        <pre><code class="language-php">
+&lt;?php
+$allowed_commands = ['ls', 'whoami'];
+$command = $_GET['cmd'];
+if (in_array($command, $allowed_commands)) {
+    system($command);
+} else {
+    echo "Comando não permitido.";
+}
+?&gt;
+        </code></pre>
+
+        <h3>Python</h3>
+        <pre><code class="language-python">
+import subprocess
+allowed_commands = ['ls', 'whoami']
+command = input("Enter the command: ")
+if command in allowed_commands:
+    subprocess.run(command, shell=True)
+else:
+    print("Command not allowed.")
+        </code></pre>
+    </div>
+
+    <div class="big-button-container">
+      <h2>Gostaria de testar seu conhecimento sobre o assunto</h2>
+      <a href="quiz.html" class="big-button">Clique aqui para iniciar o Quiz</a>  <!-- MUDAR PARA PARTE DO IAGO -->
+
+    </div>
+    
+    <footer>
+        <div class="conteudo_footer">
+            <a class="links_footer" href="licoes.html">Lições</a>
+            <a class="links_footer" href="potencializa.html">Potencializador De Senhas</a>
+            <a class="links_footer" href="gerencia.html">Gerenciador De Senhas</a>
+            <a class="links_footer" href="verificacao.html">Verificação De Links</a>
+        </div>
+        <div class="titulo_footer">
+            <p>© 2024 NetGuard Inc. Todos os Direitos Reservados. Duvidas? Use o email suportenetguard@gmail.com</p>
+        </div>
+      </footer>
+
+
+    <script>
+        document.getElementById('menuIcon').addEventListener('click', function() {
+          var menu = document.getElementById('menu');
+          if (menu.classList.contains('open')) {
+            menu.classList.remove('open');
+          } else {
+            menu.classList.add('open');
+          }
+        });
+      </script>
+</body>
+</html>
