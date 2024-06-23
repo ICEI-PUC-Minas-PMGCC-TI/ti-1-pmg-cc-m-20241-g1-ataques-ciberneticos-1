@@ -611,30 +611,208 @@
                 <h5>Estrutura de Dados - Mensagens</h5>
                 <p>Mensagens salvas em JSON para o GuardBot</p>
                 <pre>
-                  "responses": {
-                    "1": {
-                        "text": "Os ataques de rede distribuídos muitas vezes são chamados de ataques de negação de serviço distribuído (DDoS). \nEsse tipo de ataque aproveita os limites de capacidade específicos que se aplicam a todos os recursos de rede, como \ninfraestrutura que viabiliza o site de uma empresa. O ataque DDoS envia múltiplas solicitações para o recurso Web\ninvadido com o objetivo de exceder a capacidade que o site tem de lidar com diversas solicitações, impedindo seu\nfuncionamento correto.",
-                        "image": "../assets/images/botddos.jpg",
-                        "source": "https://example.com/source1"
+                  "data": [
+                              { 
+                                "id": 1,
+                                "opcao": "Ataque DDoS",
+                                "categoria": "informativa",
+                                "tipo": "Informativa",
+                                "data": "2023-06-01",
+                                "conteudo": "Um ataque DDoS (Distributed Denial of Service) visa sobrecarregar um servidor com tráfego para torná-lo indisponível."
+                              },
+                              {  
+                                "id": 2,
+                                "opcao": "Injeção SQL",
+                                "categoria": "informativa",
+                                "tipo": "Informativa",
+                                "data": "2023-06-02",
+                                "conteudo": "Injeção SQL é uma técnica de ataque onde comandos SQL são inseridos em campos de entrada para manipular o banco de dados."
+                              },
+                              { 
+                                "id": 3,
+                                "opcao": "Phishing",
+                                "categoria": "informativa",
+                                "tipo": "Informativa",
+                                "data": "2023-06-03",
+                                "conteudo": "Phishing é uma tentativa de obter informações sensíveis enganando as pessoas para que divulguem dados pessoais."
+                              },
+                              {
+                                "id": 4,
+                                "opcao": "Malware",
+                                "categoria": "informativa",
+                                "tipo": "Informativa",
+                                "data": "2023-06-04",
+                                "conteudo": "Malware é um software malicioso projetado para danificar, interromper ou ganhar acesso não autorizado a sistemas de computador."
+                              },
+                              {
+                                "id": 5,
+                                "opcao": "Ransomware",
+                                "categoria": "informativa",
+                                "tipo": "Informativa",
+                                "data": "2023-06-05",
+                                "conteudo": "Ransomware é um tipo de malware que criptografa os dados da vítima e exige um resgate para restaurar o acesso."
+                              }
+                          ]
+                </pre>
+              </section>
+
+              <!-- Funcionalidade 3 - Gabriel Carvalho -->
+              <section>
+                <h5>Funcionalidade 3 - Seção de notícias conscientizadoras</h5>
+                <p>Acesso a notícias sobre os principais tipos de ataques cibernéticos</p>
+                <ul class="list-unstyled">
+                  <li><strong>Estrutura de dados: </strong><a href="#ti_ed_noticias">Notícias</a></li>
+                  <li><strong>Instruções de acesso a página principal: </strong><ul>
+                    <li>Abra o site e acesse a página de início</li>
+                    <li>Acesse as notícias por meio da seção de notícias na tela inicial</li>
+                  </ul></li>
+                </ul>
+                <p class="text-center"><img class="img-fluid" src="assets/images/sprint1GabrielFerreira.png" alt="Tela Cadastro de Contatos"></p>
+              </section>
+            </section>
+
+            <!-- Estruturas de dados =============== -->
+            <section id="ti_estruturas_dados">
+              <h4>Estruturas de Dados</h4>
+              <p>Descrição das estruturas de dados utilizadas na solução com exemplos no formato JSON.
+                <button type="button" class="btn btn-light btn-sm float-right" data-toggle="collapse" href="#collapseEstruturas">Info</button>
+              </p>
+              <div class="alert alert-warning collapse" role="alert" id="collapseEstruturas">
+                <p>Apresente as estruturas de dados utilizadas na solução tanto para dados utilizados na essência da aplicação quanto outras estruturas que foram criadas para algum tipo de configuração</p>
+                <p>Nomeie a estrutura, coloque uma descrição sucinta e apresente um exemplo em formato JSON.</p>
+              </div>
+
+              <section>
+                <h5>Estrutura de Dados - Notícias</h5>
+                <p>Notícias salvas em JSON para a tela inicial</p>
+                <pre>
+                  "noticias": [
+                                {
+                                    "titulo": "Vazamento de dados: o que é, como ocorre e como se proteger",
+                                    "resumo": "O vazamento de dados é um problema que, infelizmente, vem se tornando cada vez mais comum. O alvo principal são consumidores desprotegidos nos ambientes virtuais e empresas que lidam com uma grande quantidade de informações dos seus clientes.",
+                                    "data": "27/10/2022",
+                                    "fonte": "cora.com",
+                                    "url": "https://www.cora.com.br/blog/vazamento-de-dados/."
+                                },
+                                {
+                                    "titulo": "Segurança na Internet: conheça 6 maneiras para se proteger de vazamento de dados",
+                                    "resumo": "Ataques ocorrem na tentativa de criminosos de obter ganhos financeiros até a exposição deliberada de informações confidenciais de uma empresa.",
+                                    "data": "22/08/2023",
+                                    "fonte": "exame.com",
+                                    "url": "https://exame.com/tecnologia/seguranca-na-internet-conheca-6-maneiras-para-se-proteger-de-vazamento-de-dados/."
+                                },
+                                {
+                                    "titulo": "26 bilhões de dados: veja se você está no maior vazamento da história",
+                                    "resumo": "O vazamento de dados de usuários de plataformas como X (antigo Twitter) e Telegram, além de instituições e empresas brasileiras.",
+                                    "data": "23/01/2024",
+                                    "fonte": "olhardigital.com.br",
+                                    "url": "https://olhardigital.com.br/2024/01/23/seguranca/26-bilhoes-de-dados-veja-se-voce-esta-no-maior-vazamento-da-historia/#google_vignette."
+                                },
+                                {
+                                    "titulo": "Facebook é condenado a pagar R$ 20 milhões por vazamento de dados de usuários",
+                                    "resumo": "A Justiça de Minas Gerais condenou o Facebook por dano moral coletivo e individual pelos episódios de vazamentos de dados de usuários da rede social, do Messenger e também do aplicativo de mensagem WhatsApp, que ocorreram nos anos de 2018 e 2019.",
+                                    "data": "27/07/2023",
+                                    "fonte": "cnnbrasil.com.br",
+                                    "url": "https://www.cnnbrasil.com.br/nacional/facebook-e-condenado-a-pagar-r-20-milhoes-por-vazamento-de-dados-de-usuarios/."
+                                },
+                                {
+                                    "titulo": "Megavazamento de dados de 223 milhões de brasileiros: o que se sabe e o que falta saber",
+                                    "resumo": "Número é maior do que a população do país, estimada em 212 milhões, porque inclui dados de falecidos. Informações expostas incluem CPF, nome, sexo e data de nascimento, além de uma tabela com dados de veículos e uma lista com CNPJs. Origem dos dados ainda é desconhecida.",
+                                    "data": "28/01/2021",
+                                    "fonte": "tecmundo.com.br",
+                                    "url": "https://g1.globo.com/economia/tecnologia/noticia/2021/01/28/vazamento-de-dados-de-223-milhoes-de-brasileiros-o-que-se-sabe-e-o-que-falta-saber.ghtml."
+                                },
+                                {
+                                    "titulo": "Banco Central anuncia vazamento de mais de 2 mil chaves Pix ligadas à LogBank",
+                                    "resumo": "Autarquia informou que nenhum dado sensível foi vazado, no terceiro caso desde o lançamento do Pix",
+                                    "data": "03/02/2022",
+                                    "fonte": "g1.globo.com",
+                                    "url": "https://www.cnnbrasil.com.br/economia/banco-central-anuncia-vazamento-de-mais-de-2-mil-chaves-pix-ligadas-a-logbank/."
+                                }
+                              ]
+                </pre>
+              </section>
+
+              <!-- Funcionalidade 4 - Gabriel Carvalho -->
+              <section>
+                <h5>Funcionalidade 4 - Quizes conscientizadores</h5>
+                <p>Acesso a página inicial e por meio dos cards aprenda sobre ataques cibernéticos</p>
+                <ul class="list-unstyled">
+                  <li><strong>Estrutura de dados: </strong><a href="#ti_ed_quiz">Quiz</a></li>
+                  <li><strong>Instruções de acesso a página principal: </strong><ul>
+                    <li>Abra o site e acesse a página de início</li>
+                    <li>Acesse aos quizes por meio dos cards na tela inicial</li>
+                  </ul></li>
+                </ul>
+                <p class="text-center"><img class="img-fluid" src="assets/images/sprint2GabrielFerreira.png" alt="Tela Cadastro de Contatos"></p>
+              </section>
+            </section>
+
+            <!-- Estruturas de dados =============== -->
+            <section id="ti_estruturas_dados">
+              <h4>Estruturas de Dados</h4>
+              <p>Descrição das estruturas de dados utilizadas na solução com exemplos no formato JSON.
+                <button type="button" class="btn btn-light btn-sm float-right" data-toggle="collapse" href="#collapseEstruturas">Info</button>
+              </p>
+              <div class="alert alert-warning collapse" role="alert" id="collapseEstruturas">
+                <p>Apresente as estruturas de dados utilizadas na solução tanto para dados utilizados na essência da aplicação quanto outras estruturas que foram criadas para algum tipo de configuração</p>
+                <p>Nomeie a estrutura, coloque uma descrição sucinta e apresente um exemplo em formato JSON.</p>
+              </div>
+
+              <section>
+                <h5>Estrutura de Dados - Notícias</h5>
+                <p>Notícias salvas em JSON para a tela inicial</p>
+                <pre>
+                  [
+                    {
+                        "titulo": "Injeção SQL",
+                        "descricao": "Injeção SQL é um ataque cibernético que insere comandos SQL maliciosos em aplicações, permitindo acesso e alteração de dados."
                     },
-                    "2": {
-                        "text": "Uma injeção de SQL, às vezes abreviada como SQLi, é um tipo de vulnerabilidade em que um invasor usa uma parte do código SQL (Structured Query Language) para manipular um banco de dados e obter acesso a informações potencialmente valiosas. Esse é um dos tipos de ataque mais comuns e perigosos porque pode ser usado contra qualquer aplicação de Web ou site que utilize um banco de dados SQL (ou seja, a maioria deles).",
-                        "image": "../assets/images/botsqlinjection.jpg"
+                    {
+                        "titulo": "Execução de Comando",
+                        "descricao": "A execução de comando permite que invasores rodem comandos arbitrários no servidor via Prompt de Comando, comprometendo todo o sistema."
                     },
-                    "3": {
-                        "text": "Spam é um termo usado para disparos em massa de mensagens eletrônicas indesejadas cujo recebimento sequer foi autorizado pelo destinatário. Essa prática é mais popular no e-mail, mas também acontece em outros canais.",
-                        "image": "../assets/images/botddos.jpg",
-                        "source": "https://example.com/source3"
+                    {
+                        "titulo": "Sequestro de Cliques",
+                        "descricao": "Sequestro de Cliques redireciona cliques do usuário para ações maliciosas usando elementos invisíveis na web, comprometendo a segurança."
                     },
-                    "4": {
-                        "text": "Quando as pessoas pensam sobre o que é phishing, acham esta denominação diferente, já que ela tem origem no inglês, em fishing (pescar). A analogia remete a um pescador jogando um anzol com isca (o e-mail de phishing) e esperando que a vítima a morda. Em resumo, ataques de phishing são a prática de enviar comunicações fraudulentas que parecem vir de uma fonte confiável. O golpe geralmente é aplicado por e-mail, mas também pode surgir de uma mensagem SMS, por exemplo.",
-                        "image": "../assets/images/botphishing.jpg"
+                    {
+                        "titulo": "Vulnerabilidade de Upload de arquivos",
+                        "descricao": "Vulnerabilidade de Upload de Arquivos é uma falha que permite a invasores enviar e executar arquivos maliciosos no servidor, ameaçando sua segurança."
                     },
-                    "5": {
-                        "text": "Prática focada em explorar as vulnerabilidades do usuário, nos ataques de engenharia social o criminoso manipula a vítima para conseguir que ela clique em links maliciosos, conecte em seu computador um dispositivo infectado ou revele informações sigilosas. É comum que esse tipo de cibercrime use formulários do Google e e-mails que solicitam senhas e outros dados pessoais ou corporativos que não devem ser compartilhados.",
-                        "image": "../assets/images/botsocialengineering.jpg"
+                    {
+                        "titulo": "Vazamento de Informação",
+                        "descricao": "Vazamento de Informação é a divulgação não autorizada de dados sensíveis, podendo resultar em danos à privacidade, reputação e segurança das pessoas ou organizações envolvidas."
+                    },
+                    {
+                        "titulo": "Escalação de Privilégios",
+                        "descricao": "Escalação de Privilégios é quando um invasor obtém acesso a níveis mais altos de autoridade do que deveria, permitindo manipulação indevida do sistema ou dados."
+                    },
+                    {
+                        "titulo": "Ataques de Negação de Serviço",
+                        "descricao": "Ataques de Negação de Serviço (DoS) visam sobrecarregar sistemas ou redes com tráfego malicioso, tornando-os inacessíveis a usuários legítimos."
+                    },
+                    {
+                        "titulo": "Falsificação de e-mail",
+                        "descricao": "Falsificação de e-mail, ou spoofing, mascara o remetente para parecer legítimo, frequentemente usado em ataques de phishing."
+                    },
+                    {
+                        "titulo": "Malvertising",
+                        "descricao": "Malvertising é a distribuição de malware por meio de anúncios online, redirecionando usuários para sites maliciosos ou baixando malware em seus dispositivos."
+                    },
+                    {
+                        "titulo": "Falsificação de Solicitação no Servidor (CSRF)",
+                        "descricao": "Falsificação de Solicitação no Servidor (CSRF) é um ataque cibernético em que um invasor engana um usuário autenticado a executar ações indesejadas em um aplicativo web."
+                    },
+                    {
+                        "titulo": "Execução Remota de Código",
+                        "descricao": "A Execução Remota de Código é um tipo de ataque onde um invasor pode executar comandos arbitrários em um sistema vulnerável, geralmente explorando falhas de segurança em softwares."
+                    },
+                    {
+                        "titulo": "Inclusão de Script entre Sites (XSS)",
+                        "descricao": "A Inclusão de Script entre Sites (XSS) é uma vulnerabilidade que permite a inserção de scripts maliciosos em páginas web, explorando a falta de validação de entrada de dados."
                     }
-                }
+                  ]
                 </pre>
               </section>
             </section>
