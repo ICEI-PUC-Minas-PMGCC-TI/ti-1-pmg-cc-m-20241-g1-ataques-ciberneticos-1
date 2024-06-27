@@ -7,6 +7,58 @@
     <link rel="stylesheet" href="../assets/css/styleQuiz.css">
     <link rel="stylesheet" href="../assets/css/global.css">
     <title>Quiz</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            margin: 0;
+        }
+
+        main {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            padding: 20px;
+        }
+
+        header, footer {
+            background: #f8f9fa;
+            padding: 10px;
+            text-align: center;
+            width: 100%;
+        }
+
+        .global-nav-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .global-nav-list ul {
+            display: flex;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .global-nav-item {
+            margin: 0 10px;
+        }
+
+        .global-login-button button {
+            padding: 5px 10px;
+        }
+
+        .quiz-container, .question-container, #result, #congratsMessage {
+            width: 100%;
+            max-width: 600px;
+            margin: 0 auto;
+            text-align: center;
+        }
+    </style>
 </head>
 </head>
 <!-- Cebeçalho -->
@@ -46,6 +98,7 @@
         </div>
     </div>
     </header>
+<main>
 <body class="Iago3">
     <div class="quiz-container">
         <h2>Teste seu conhecimento</h2>
@@ -72,8 +125,23 @@
         <h2>Parabéns! Você acertou todas as questões!</h2>
         <button class="quiz-button" onclick="goToMainPage()">Voltar ao Início</button>
     </div>
+</main>
 
-
+<footer id="global-footer">
+    <div class="global-conteudo-footer">
+        <a class="global-links-footer" href="licoes.html">Lições</a>
+        <a class="global-links-footer" href="VerificadorSenha.html">Potencializador De Senhas</a>
+        <a class="global-links-footer" href="gc3index.html">Gerenciador De Senhas</a>
+        <a class="global-links-footer" href="indexVerficador.html">Verificação De Links</a>
+        <a class="global-links-footer" href="chatbot.html">Chatbot</a>
+        
+    </div>
+    <div class="global-titulo-footer">
+        <p id="copy">
+            © 2024 NetGuard Inc. Todos os Direitos Reservados. Duvidas? Use o email suportenetguard@gmail.com
+        </p>
+    </div>
+</footer>
     <script src="../assets/js/scriptEscalonamentoQuiz.js"></script>
     <script src="../assets/js/global.js"></script>
 </body>

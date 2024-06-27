@@ -6,7 +6,60 @@
     <title>Verificador de senha</title>
     <link rel="stylesheet" type="text/css" href="../assets/css/styleVerificadorSenha.css">
     <link rel="stylesheet" href="../assets/css/global.css">
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            margin: 0;
+        }
+
+        main {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            padding: 20px;
+        }
+
+        header, footer {
+            background: #f8f9fa;
+            padding: 10px;
+            text-align: center;
+            width: 100%;
+        }
+
+        .global-nav-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .global-nav-list ul {
+            display: flex;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .global-nav-item {
+            margin: 0 10px;
+        }
+
+        .global-login-button button {
+            padding: 5px 10px;
+        }
+
+        .quiz-container, .question-container, #result, #congratsMessage {
+            width: 100%;
+            max-width: 600px;
+            margin: 0 auto;
+            text-align: center;
+        }
+    </style>
 </head>
+
 
 <body class="Iago2">
     <!-- Cabeçalho -->
@@ -18,7 +71,7 @@
             <div class="global-nav-list">
                 <ul>
                     <li class="global-nav-item"><a href="licoes.html" class="global-nav-link">Lições</a></li>
-                    <li class="global-nav-item"><a href="VerificadorSenha.html" class="global-nav-link">Potencializador de Senha</a></li>
+                    
                     <li class="global-nav-item"><a href="gc3index.html" class="global-nav-link">Gerenciador de Senha</a></li>
                     <li class="global-nav-item"><a href="indexVerficador.html" class="global-nav-link">Verificador de Links</a></li>
                     <li class="global-nav-item"><a href="chatbot.html" class="global-nav-link">Chatbot</a></li>
@@ -46,7 +99,7 @@
             </div>
         </div>
     </header>
-
+<main>
     <div class="custom-container">
         <header>Verificador de senha</header>
         <form action="#">
@@ -62,6 +115,23 @@
             <div class="strength-text"></div>
         </form>
     </div>
+    <footer id="global-footer">
+        <div class="global-conteudo-footer">
+            <a class="global-links-footer" href="licoes.html">Lições</a>
+            
+            <a class="global-links-footer" href="gc3index.html">Gerenciador De Senhas</a>
+            <a class="global-links-footer" href="indexVerficador.html">Verificação De Links</a>
+            <a class="global-links-footer" href="chatbot.html">Chatbot</a>
+            
+        </div>
+        
+        <div class="global-titulo-footer">
+            <p id="copy">
+                © 2024 NetGuard Inc. Todos os Direitos Reservados. Duvidas? Use o email suportenetguard@gmail.com
+            </p>
+        </div>
+    </main>
+    </footer>
     <script src="../assets/js/scriptVerificadorSenha.js"></script>
     <script src="../assets/js/global.js"></script>
 </body>
