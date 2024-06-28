@@ -8,15 +8,191 @@
 body {
     background-color: rgb(0, 0, 0);
 }
-#gc-container {
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/* HEADER */
+
+#global-header {
+    background-color: white;
+    box-shadow: 0px 3px 10px #464646;
+    font-weight: bolder;
+    font-family: "Playwrite NG Modern", cursive;
+    margin: 0;
+    width: 100%;
+}
+
+.global-nav-bar {
+    display: flex;
+    justify-content: space-between;
+    padding: 1.4rem 1.8rem;
+}
+
+.global-logo {
+    display: flex;
+    align-items: center;
+}
+
+.global-logo a {
+    color: #008080;
+    text-decoration: none;
+    margin-top: 10px;
+    font-family: "Playwrite NG Modern", cursive;
+}
+
+.global-nav-list {
+    display: flex;
+    padding-top: 5px;
+    font-size: 20px;
+    align-items: center;
+    color: lightgray;
+}
+
+.global-nav-list ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+}
+
+.global-nav-item {
+    margin: 0 50px;
+    font-size: 19px;
+    color: black;
+    transition: transform 0.7s ease;
+}
+
+.global-nav-item:hover {
+    display: flex;
+    color: black;
+    transform: scale(1.3);
+}
+
+.global-nav-link {
+    text-decoration: none;
+    font-size: 1.1rem;
+    color: #443f3f;
+    font-weight: 400;
+}
+
+.global-login-button button {
+    border: none;
+    margin-top: 10px;
+    padding: 15px 20px;
+    border-radius: 5px;
+    background-color: #0187a7;
+}
+
+.global-login-button button a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: 500;
+    font-size: 1.1rem;
+}
+
+.global-mobile-menu-icon {
+    display: none;
+    color: black;
+}
+
+.global-mobile-menu {
+    display: none;
+    color: black;
+    font-size: 20px;
+    text-align: center;
+}
+
+@media screen and (max-width: 730px) {
+    .global-nav-bar {
+        padding: 1.5rem 4rem;
+    }
+    .global-nav-item {
+        display: none;
+    }
+    .global-login-button {
+        display: none;
+    }
+    .global-mobile-menu-icon {
+        display: block;
+    }
+    .global-mobile-menu-icon button {
+        background-color: transparent;
+        border: none;
+        cursor: pointer;
+    }
+    .global-mobile-menu-icon img {
+        filter: invert(1);
+    }
+    .global-mobile-menu ul {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        padding-bottom: 1rem;
+    }
+    .global-mobile-menu .nav-item {
+        display: block;
+        padding-top: 1.2rem;
+    }
+    .global-mobile-menu .login-button {
+        display: block;
+        padding: 1rem 2rem;
+    }
+    .global-mobile-menu .login-button button {
+        width: 100%;
+    }
+    .global-open {
+        display: block;
+    }
+}
+
+/* FOOTER */
+
+#global-footer {
+    background-color: #fdfdfd;
+    color: black;
+    text-align: justify;
+    width: 100%;
+    height: 200px;
+}
+
+.global-titulo-footer {
+    font-size: 1rem;
+}
+
+#copy {
+    text-align: center;
+}
+
+.global-conteudo-footer {
+    display: flex;
+    margin: 60px 10px;
+    gap: 25px;
+    justify-content: space-around;
+}
+
+.global-links-footer {
+    text-decoration: none;
+    color: black;
+    transition: transform 0.7s ease;
+}
+
+.global-links-footer:hover {
+    display: flex;
+    color: black;
+    transform: scale(1.1);
+}
+
+#container {
     display: grid;
     place-items: center;
     height: 100vh;
 }
-#gc-show-password{
+#show-password{
     border: none;
 }
-.gc-box {
+.box {
     border-radius: 12px;
     width: 600px;
     height: 600px;
@@ -27,18 +203,18 @@ body {
     justify-content: space-between;
     padding: 20px 0;
 }
-.gc-title {
+.title {
     text-align: center;
 }
-.gc-title h1 {
+.title h1 {
     color: rgb(0, 0, 0);
 }
-.gc-text-field {
+.text-field {
     display: flex;
     flex-direction: column;
     gap: 10px; 
 }
-.gc-name input {
+.name input {
     width: 300px;
     height: 40px;
     border: none;
@@ -47,13 +223,13 @@ body {
     padding: 10px;
     font-size: 16px;
 }
-.gc-name {
+.name {
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 10px;
 }
-#gc-send-name {
+#send-name {
     background-color: transparent;
     border: 1px black solid;
     border-radius: 100%;
@@ -62,13 +238,13 @@ body {
     cursor: pointer;
     width: 25px;
 }
-.gc-password {
+.password {
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 10px;
 }
-.gc-password input {
+.password input {
     width: 300px;
     height: 40px;
     border: none;
@@ -77,25 +253,25 @@ body {
     padding: 10px;
     font-size: 16px;
 }
-.gc-password button {
+.password button {
     background-color: transparent;
     border: 2px solid black;
     font-size: 20px;
     cursor: pointer;
 }
-#gc-show-password {
+#show-password {
     border: none;
 }
 ::-webkit-input-placeholder {
     color: rgb(255, 255, 255);
 }
-.gc-send {
+.send {
     display: flex;
     justify-content: end;
     align-items: end;
     padding-top: 4px;
 }
-#gc-send-login {
+#send-login {
     background-color: black;
     color: white;
     width: 70px;
@@ -104,14 +280,14 @@ body {
     border-radius: 20px;
     cursor: pointer;
 }
-.gc-sub-box {
+.sub-box {
     width: 90%;
     height: 300px;
     border: 2px solid black;
     padding: 12px;
     border-radius: 12px;
 }
-.gc-password-item {
+.password-item {
     border: 2px solid #000; /* Adiciona uma borda preta de 2 pixels */
     padding: 10px; /* Adiciona espaçamento interno */
     margin: 5px 0; /* Adiciona espaçamento entre os itens */
