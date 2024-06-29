@@ -1,10 +1,19 @@
 @import url("https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap");
 
-.Iago2 * {
+body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: "Poppins", sans-serif;
+}
+
+#global-header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: #fff; /* Ajuste conforme necessário */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
 }
 
 .Iago2 {
@@ -12,6 +21,7 @@
     justify-content: center;
     align-items: center;
     height: 100vh;
+    padding-top: 70px; /* Ajuste conforme a altura do header */
 }
 
 .Iago2 .custom-container {
@@ -24,7 +34,6 @@
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
     text-align: center;
 }
-
 
 .Iago2 .custom-container header {
     font-size: 24px;

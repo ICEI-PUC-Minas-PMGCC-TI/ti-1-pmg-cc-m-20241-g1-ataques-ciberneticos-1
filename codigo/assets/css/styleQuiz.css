@@ -1,26 +1,16 @@
-.Iago3 .quiz-container {
+/* styles.css */
+.Iago3 .quiz-container, .Iago3 .question-container, .Iago3 #result, .Iago3 #congratsMessage {
     text-align: center;
     margin: 0 auto;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    width: 100%;
+    max-width: 600px;
 }
 
-.Iago3 .question-container {
-    text-align: center;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+.Iago3 .quiz-container {
+    margin-top: 20px;
 }
 
 .Iago3 #result {
-    text-align: center;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
     background-color: #f9f9f9;
     padding: 20px;
     border-radius: 10px;
@@ -29,11 +19,6 @@
 }
 
 .Iago3 #congratsMessage {
-    text-align: center;
-    position: absolute;
-    top: calc(50% + 100px);
-    left: 50%;
-    transform: translate(-50%, -50%);
     color: #0f0b0b;
     padding: 20px;
     border-radius: 10px;

@@ -88,7 +88,7 @@ function showResult() {
 }
 
 function goToMainPage() {
-    window.location.href = "FalsificaçãoSQuiz.html"; //MODIFICAR ISSO PARA A PARTE DO GABRIEL
+    window.location.href = "licoes.html"; //MODIFICAR ISSO PARA A PARTE DO GABRIEL
 }
 
 function goToQuiz() {
