@@ -16,7 +16,6 @@ function pegaResponses() {
         });
 }
 
-
 function displayMessage(msg) {
     $('#msg').html('<div class="alert alert-warning">' + msg + '</div>');
 }
