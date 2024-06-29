@@ -4,45 +4,93 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../assets/css/stylesCadastroURL.css">
+    <link rel="stylesheet" href="../assets/css/global.css">
     <title>Cadastro de URLs</title>
 </head>
-<body style="background-color: rgb(103, 41, 160)";>
-    <div class="body-styles GH3">
-        <div class="container GH3">
-            <div class="cadastro GH3">
-                <h1>Cadastro de URLs</h1>
-                <div class="input-group GH3">
-                    <input type="text" class="id" placeholder="Nome:">
-                    <input type="url" class="categoria" placeholder="URL:">
-                    <select class="confianca">
-                        <option value="Confiavel">Confiável</option>
-                        <option value="Não confiavel">Não confiável</option>
-                    </select>
-                </div>
-                <div class="button-group GH3">
-                    <button class="button1 GH3">Inserir</button>
-                    <button class="button3 GH3">Excluir marcado</button>
-                    <button class="button4 GH3">Limpar</button>
+<body>
+    <!-- Cebeçalho -->
+    <header id="global-header">
+        <nav class="global-nav-bar">
+            <div class="global-logo">
+                <h1><a href="../index.html">NetGuard</a></h1>
+            </div>
+            <div class="global-nav-list">
+                <ul>
+                    <li class="global-nav-item"><a href="licoes.html" class="global-nav-link">Lições</a></li>
+                    <li class="global-nav-item"><a href="VerificadorSenha.html" class="global-nav-link">Verificador de Senha</a></li>
+                    <li class="global-nav-item"><a href="VerificadorSenha.html" class="global-nav-link">Verificador de Senha</a></li>
+                    <li class="global-nav-item"><a href="indexVerficador.html" class="global-nav-link">Verificador de Links</a></li>
+                    <li class="global-nav-item"><a href="chatbot.html" class="global-nav-link">Chatbot</a></li>
+                </ul>
+            </div>
+
+            <div class="global-mobile-menu-icon">
+                <button onclick="menuShow()"><img class="global-icon" src="images/menu_white_36dp.svg" alt=""></button>
+            </div>
+        </nav>
+        <div class="global-mobile-menu">
+            <ul>
+                <li class="global-nav-item"><a href="licoes.html" class="global-nav-link">Lições</a></li>
+                <li class="global-nav-item"><a href="VerificadorSenha.html" class="global-nav-link">Potencializador de Senha</a></li>
+                <li class="global-nav-item"><a href="VerificadorSenha.html" class="global-nav-link">Verificador de Senha</a></li>
+                <li class="global-nav-item"><a href="indexVerficador.html" class="global-nav-link">Verificador de Links</a></li>
+                <li class="global-nav-item"><a href="chatbot.html" class="global-nav-link">Chatbot</a></li>
+            </ul>
+        </div>
+    </header>
+    <main>
+        <div class="body-styles GH3">
+            <div class="container GH3">
+                <div class="cadastro GH3">
+                    <h1>Cadastro de URLs</h1>
+                    <div class="input-group GH3">
+                        <input type="text" class="id" placeholder="Nome:">
+                        <input type="url" class="categoria" placeholder="URL:">
+                        <select class="confianca">
+                            <option value="Confiavel">Confiável</option>
+                            <option value="Não confiavel">Não confiável</option>
+                        </select>
+                    </div>
+                    <div class="button-group GH3">
+                        <button class="button1 GH3">Inserir</button>
+                        <button class="button3 GH3">Excluir marcado</button>
+                        <button class="button4 GH3">Limpar</button>
+                    </div>
                 </div>
             </div>
-        </div>
 
-        <div class="container2 GH3">
-            <h1>Lista de URLs</h1>
-            <table class="news-table GH3">
-                <thead>
-                    <tr>
-                        <th>Excluir</th>
-                        <th>Nome</th>
-                        <th>URL</th>
-                        <th>Confiança</th>
-                    </tr>
-                </thead>
-                <tbody></tbody>
-            </table>
+            <div class="container2 GH3">
+                <h1>Lista de URLs</h1>
+                <table class="news-table GH3">
+                    <thead>
+                        <tr>
+                            <th>Excluir</th>
+                            <th>Nome</th>
+                            <th>URL</th>
+                            <th>Confiança</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </div>
         </div>
-    </div>
+    </main>
+    <!-- Rodapé -->
+    <footer id="global-footer">
+        <div class="global-conteudo-footer">
+            <a class="global-links-footer" href="licoes.html">Lições</a>
+            <a class="global-links-footer" href="potencializa.html">Potencializador De Senhas</a>
+            <a class="global-links-footer" href="gerencia.html">Gerenciador De Senhas</a>
+            <a class="global-links-footer" href="verificacao.html">Verificação De Links</a>
+            <a class="global-links-footer" href="chatbot.html">Chatbot</a>
+        </div>
+        <div class="global-titulo-footer">
+            <p id="copy">
+                © 2024 NetGuard Inc. Todos os Direitos Reservados. Duvidas? Use o email suportenetguard@gmail.com
+            </p>
+        </div>
+    </footer>
 
-        <script src="../assets/js/scriptCadastroURL.js"></script>
+    <script src="../assets/js/scriptCadastroURL.js"></script>
 </body>
 </html>

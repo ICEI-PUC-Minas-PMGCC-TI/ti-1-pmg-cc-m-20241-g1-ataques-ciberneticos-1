@@ -80,7 +80,7 @@ document.querySelector('.button1').addEventListener('click', incluirUrl);
 document.querySelector('.button4').addEventListener('click', () => {
     document.querySelector('.id').value = '';
     document.querySelector('.categoria').value = '';
-    document.querySelector('.confianca').value = ''; // Correção aqui
+    document.querySelector('.confianca').value = '';
 });
 
 document.querySelector('.button3').addEventListener('click', excluirSelecionados);
