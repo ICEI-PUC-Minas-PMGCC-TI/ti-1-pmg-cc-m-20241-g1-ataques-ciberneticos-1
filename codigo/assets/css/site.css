@@ -13,7 +13,6 @@ header {
     background-color: white;
     box-shadow: 0px 3px 10px #464646;
     font-family: "Playwrite NG Modern", cursive;
-    margin: 10px;
     font-weight: bold;
 }
 
@@ -255,16 +254,24 @@ header {
 
 .container_GabrielF {
     display: flex;
+    margin-top: 60px;
     text-align: center;
     flex-direction: column;
+    gap: 50px;
 }
 .carousel-inner {
     box-shadow: 3px 3px 4px black;
 }
 
+
+
 .conscientizacao_GabrielF {
     background-color: #f8f9fa;
     padding: 40px 20px;
+}
+
+.row {
+    text-align: justify;
 }
 
 /* FOOTER */

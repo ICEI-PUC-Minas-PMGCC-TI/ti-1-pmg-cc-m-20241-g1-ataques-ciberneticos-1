@@ -22,5 +22,67 @@
             "text": "Prática focada em explorar as vulnerabilidades do usuário, nos ataques de engenharia social o criminoso manipula a vítima para conseguir que ela clique em links maliciosos, conecte em seu computador um dispositivo infectado ou revele informações sigilosas. É comum que esse tipo de cibercrime use formulários do Google e e-mails que solicitam senhas e outros dados pessoais ou corporativos que não devem ser compartilhados.",
             "image": "../assets/images/botsocialengineering.jpg"
         }
-    }
-}
+    },
+    "solucoes": [
+      {
+        "titulo": "Potencializador de Senha",
+        "descricao": "Melhora a força de suas senhas, tornando-as mais seguras contra ataques.",
+        "url": "potencializa.html"
+      },
+      {
+        "titulo": "Gerenciador de Senha",
+        "descricao": "Armazena e organiza suas senhas de forma segura e acessível.",
+        "url": "gerencia.html"
+      },
+      {
+        "titulo": "Verificação de Links",
+        "descricao": "Analisa links para identificar possíveis ameaças e manter sua navegação segura.",
+        "url": "verificacao.html"
+      }
+    ],
+    "noticias": [
+          {
+              "titulo": "Vazamento de dados: o que é, como ocorre e como se proteger",
+              "resumo": "O vazamento de dados se torna um problema cada vez mais comum. Consumidores desprotegidos e empresas com muitas informações dos clientes são os principais alvos.",
+              "data": "27/10/2022",
+              "fonte": "cora.com",
+              "url": "https://www.cora.com.br/blog/vazamento-de-dados/"
+          },
+          {
+              "titulo": "Segurança na Internet: conheça 6 maneiras para se proteger de vazamento de dados",
+              "resumo": "Criminosos atacam para obter ganhos financeiros ou expor deliberadamente informações confidenciais de empresas.",
+              "data": "22/08/2023",
+              "fonte": "exame.com",
+              "url": "https://exame.com/tecnologia/seguranca-na-internet-conheca-6-maneiras-para-se-proteger-de-vazamento-de-dados/"
+          },
+          {
+              "titulo": "26 bilhões de dados: veja se você está no maior vazamento da história",
+              "resumo": "Dados de usuários de plataformas como X (antigo Twitter), Telegram, além de empresas e instituições brasileiras foram vazados.",
+              "data": "23/01/2024",
+              "fonte": "olhardigital.com.br",
+              "url": "https://olhardigital.com.br/2024/01/23/seguranca/26-bilhoes-de-dados-veja-se-voce-esta-no-maior-vazamento-da-historia/#google_vignette"
+          },
+          {
+              "titulo": "Facebook é condenado a pagar R$ 20 milhões por vazamento de dados de usuários",
+              "resumo": "A Justiça de Minas Gerais condenou o Facebook por vazamento de dados de usuários da rede social, do Messenger e do WhatsApp, ocorridos em 2018 e 2019, por dano moral coletivo e individual.",
+              "data": "27/07/2023",
+              "fonte": "cnnbrasil.com.br",
+              "url": "https://www.cnnbrasil.com.br/nacional/facebook-e-condenado-a-pagar-r-20-milhoes-por-vazamento-de-dados-de-usuarios/"
+          },
+          {
+              "titulo": "Megavazamento de dados de 223 milhões de brasileiros: o que se sabe e o que falta saber",
+              "resumo": "O número é maior que a população de 212 milhões, pois inclui falecidos. Informações vazadas incluem CPF, nome, sexo, data de nascimento, dados de veículos e CNPJs. A origem ainda é desconhecida.",
+              "data": "28/01/2021",
+              "fonte": "tecmundo.com.br",
+              "url": "https://g1.globo.com/economia/tecnologia/noticia/2021/01/28/vazamento-de-dados-de-223-milhoes-de-brasileiros-o-que-se-sabe-e-o-que-falta-saber.ghtml"
+          },
+          {
+              "titulo": "Banco Central anuncia vazamento de mais de 2 mil chaves Pix ligadas à LogBank",
+              "resumo": "A autarquia informou que nenhum dado sensível vazou, sendo este o terceiro caso desde o lançamento do Pix.",
+              "data": "03/02/2022",
+              "fonte": "g1.globo.com",
+              "url": "https://www.cnnbrasil.com.br/economia/banco-central-anuncia-vazamento-de-mais-de-2-mil-chaves-pix-ligadas-a-logbank/"
+          }
+    ]
+  }
+  

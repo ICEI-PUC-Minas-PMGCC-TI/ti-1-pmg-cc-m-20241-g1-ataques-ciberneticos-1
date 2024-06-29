@@ -9,7 +9,6 @@
     <style>
        body {
       font-family: Arial, sans-serif;
-      padding: 20px;
       margin: 0;
     }
     h1, h2, h3, p, code {
@@ -29,11 +28,15 @@
       z-index: 1000;
     }
     .header a {
-      text-decoration: none;
-      font-weight: bold;
-      font-size: 1.5rem;
-    }
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.5rem;
+    transition: font-size 0.3s ease;
+  } 
 
+  .header a:hover {
+    font-size: 1.7rem;
+   }
     .menu-icon {
       display: none;
       font-size: 1.5rem;
@@ -110,9 +113,10 @@
     <nav>
       <ul class="menu" id="menu">
         <li><a class="header_link" href="licoes.html">Lições</a></li>
-        <li><a class="header_link" href="potencializa.html">Potencializador de Senha</a></li>
-        <li><a class="header_link" href="gerencia.html">Gerenciador de Senha</a></li>
-        <li><a class="header_link" href="verificacao.html">Verificação de Links</a></li>
+        <li><a class="header_link" href="chatbot.html">ChatBot</a></li> <!-- MUDAR PARA PARTE DO Guilherme -->
+        <li><a class="header_link" href="VerificadorSenha.html">Potencializador de Senha</a></li> <!-- MUDAR PARA PARTE DO IAGO -->
+        <li><a class="header_link" href="gerencia.html">Gerenciador de Senha</a></li> <!-- MUDAR PARA PARTE DO Gabriel -->
+        <li><a class="header_link" href="verificacao.html">Verificação de Links</a></li> <!-- MUDAR PARA PARTE DO Gustavo -->
       </ul>
     </nav>
   </header>
@@ -195,10 +199,12 @@
 
     <footer>
         <div class="conteudo_footer">
-            <a class="links_footer" href="licoes.html">Lições</a>
-            <a class="links_footer" href="VerificadorSenha.html">Potencializador De Senhas</a>
-            <a class="links_footer" href="gerencia.html">Gerenciador De Senhas</a>
-            <a class="links_footer" href="verificacao.html">Verificação De Links</a>        </div>
+        <a class="links_footer" href="licoes.html">Lições</a>
+        <a class="links_footer" href="chatbot.html">ChatBot</a><!-- MUDAR PARA PARTE DO Guilherme -->
+        <a class="links_footer" href="VerificadorSenha.html">Potencializador De Senhas</a> <!-- MUDAR PARA PARTE DO IAGO -->
+        <a class="links_footer" href="gerencia.html">Gerenciador De Senhas</a> <!-- MUDAR PARA PARTE DO Gabriel -->
+        <a class="links_footer" href="verificacao.html">Verificação De Links</a> <!-- MUDAR PARA PARTE DO Gustavo -->
+          </div>
         <div class="titulo_footer">
             <p>© 2024 NetGuard Inc. Todos os Direitos Reservados. Duvidas? Use o email suportenetguard@gmail.com</p>
         </div>
