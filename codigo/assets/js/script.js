@@ -7,7 +7,8 @@ document.addEventListener('DOMContentLoaded', function() {
 function checkLogin() {
     const token = localStorage.getItem('token');
     const userLogado = JSON.parse(localStorage.getItem('userLogado'));
-    
+    const greetingShown = localStorage.getItem('greetingShown');
+
     if (!token || !userLogado) {
         // Usuário não está logado, redireciona para página de login
         alert("Você precisa estar logado para acessar essa página");
@@ -15,8 +16,12 @@ function checkLogin() {
             window.location.href = '../../pages/signin.html';
         }, 1000);
     } else {
-        // Usuário está logado, exibe saudação e carrega as notícias
-        alert(`Olá ${userLogado.nome}`);
+        // Usuário está logado
+        if (!greetingShown) {
+            // Exibe saudação se ainda não foi exibida
+            alert(`Olá ${userLogado.name}`);
+            localStorage.setItem('greetingShown', 'true'); // Marca como exibida
+        }
         loadNews();
     }
 }
@@ -38,7 +43,7 @@ function loadNews() {
 
 function apagarContas() {
     // Redirecionar para a página de login
-    window.location.href = '../../pages/signin.html';
+    window.location.href = 'pages/signin.html';
 }
 
 
@@ -63,7 +68,7 @@ function createNewsCard(noticiasItem) {
 function sair() {
     localStorage.removeItem('token');
     localStorage.removeItem('userLogado');
-    window.location.href = '../pages/signin.html';
+    window.location.href = 'pages/signin.html';
 }
 
 // Função para mostrar/ocultar o menu mobile

@@ -1,56 +1,41 @@
 <!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link
-          rel="stylesheet"
-          href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
-        />
-        <link rel="stylesheet" href="../assets/css/signup.css" />
-        <link rel="shortcut icon" href="../assets/images/logo.ico" type="image/x-icon">
-        <title>Cadastro</title>
-      </head>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="../assets/css/sign.css">
+    <title>Cadastro - Net Guard</title>
+</head>
 <body>
-    <body>
-        <div class="container">
-          <div class="card">
-            <h1>Cadastrar</h1>
-    
-            <div id="msgError"></div>
-            <div id="msgSuccess"></div>
-    
-            <div class="label-float">
-              <input type="text" id="nome" placeholder=" " required />
-              <label id="labelNome" for="nome">Nome</label>
+    <div class="container">
+        <div class="signup-container">
+            <h2>Cadastre-se</h2>
+            <form id="signupForm">
+                <div class="mb-3">
+                    <label for="name" class="form-label">Nome</label>
+                    <input type="text" class="form-control" id="name" required>
+                </div>
+                <div class="mb-3">
+                    <label for="email" class="form-label">Email</label>
+                    <input type="email" class="form-control" id="email" required>
+                </div>
+                <div class="mb-3">
+                    <label for="password" class="form-label">Senha</label>
+                    <input type="password" class="form-control" id="password" required>
+                </div>
+                <button type="submit" class="btn btn-primary">Cadastrar</button>
+                <p class="mt-3">Já tem uma conta? <a href="signin.html">Entrar</a></p>
+            </form>
+            <div class="alert alert-success" id="signupSuccess" role="alert">
+                Cadastro realizado com sucesso!
             </div>
-    
-            <div class="label-float">
-              <input type="text" id="usuario" placeholder=" " required />
-              <label id="labelUsuario" for="usuario">Usuário</label>
+            <div class="alert alert-danger" id="signupFail" role="alert">
+                Ocorreu um erro no cadastro. Tente novamente.
             </div>
-    
-            <div class="label-float">
-              <input type="password" id="senha" placeholder=" " required />
-              <label id="labelSenha" for="senha">Senha</label>
-              <i id="verSenha" class="fa fa-eye" aria-hidden="true"></i>
-            </div>
-    
-            <div class="label-float">
-              <input type="password" id="confirmSenha" placeholder=" " required />
-              <label id="labelConfirmSenha" for="confirmSenha"
-                >Confirmar Senha</label
-              >
-              <i id="verConfirmSenha" class="fa fa-eye" aria-hidden="true"></i>
-            </div>
-    
-            <div class="justify-center">
-              <button onclick="cadastrar()">Cadastrar</button>
-            </div>
-          </div>
         </div>
-        <script src="../assets/js/signup.js"></script>
-      </body>
+    </div>
+    <script src="../assets/js/auth.js"></script>
 </body>
 </html>
