@@ -11,6 +11,36 @@
 </head>
 
 <body onload="init()">
+    <!-- Cebeçalho -->
+    <header id="global-header">
+        <nav class="global-nav-bar">
+            <div class="global-logo">
+                <h1><a href="../index.html">NetGuard</a></h1>
+            </div>
+            <div class="global-nav-list">
+                <ul>
+                    <li class="global-nav-item"><a href="licoes.html" class="global-nav-link">Lições</a></li>
+                    <li class="global-nav-item"><a href="VerificadorSenha.html" class="global-nav-link">Verificador de Senha</a></li>
+                    <li class="global-nav-item"><a href="VerificadorSenha.html" class="global-nav-link">Verificador de Senha</a></li>
+                    <li class="global-nav-item"><a href="indexVerficador.html" class="global-nav-link">Verificador de Links</a></li>
+                    <li class="global-nav-item"><a href="chatbot.html" class="global-nav-link">Chatbot</a></li>
+                </ul>
+            </div>
+
+            <div class="global-mobile-menu-icon">
+                <button onclick="menuShow()"><img class="global-icon" src="images/menu_white_36dp.svg" alt=""></button>
+            </div>
+        </nav>
+        <div class="global-mobile-menu">
+            <ul>
+                <li class="global-nav-item"><a href="licoes.html" class="global-nav-link">Lições</a></li>
+                <li class="global-nav-item"><a href="VerificadorSenha.html" class="global-nav-link">Potencializador de Senha</a></li>
+                <li class="global-nav-item"><a href="VerificadorSenha.html" class="global-nav-link">Verificador de Senha</a></li>
+                <li class="global-nav-item"><a href="indexVerficador.html" class="global-nav-link">Verificador de Links</a></li>
+                <li class="global-nav-item"><a href="chatbot.html" class="global-nav-link">Chatbot</a></li>
+            </ul>
+        </div>
+    </header>
     <h1>Cadastro de Contatos (CRUD)</h1>
 
     <div class="container">
@@ -102,6 +132,21 @@
             </div>
         </div>
     </div>
+    <!-- Rodapé -->
+    <footer id="global-footer">
+        <div class="global-conteudo-footer">
+            <a class="global-links-footer" href="licoes.html">Lições</a>
+            <a class="global-links-footer" href="potencializa.html">Potencializador De Senhas</a>
+            <a class="global-links-footer" href="gerencia.html">Gerenciador De Senhas</a>
+            <a class="global-links-footer" href="verificacao.html">Verificação De Links</a>
+            <a class="global-links-footer" href="chatbot.html">Chatbot</a>
+        </div>
+        <div class="global-titulo-footer">
+            <p id="copy">
+                © 2024 NetGuard Inc. Todos os Direitos Reservados. Duvidas? Use o email suportenetguard@gmail.com
+            </p>
+        </div>
+    </footer>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
     <script src="../assets/js/app-gc-2.js"></script>
