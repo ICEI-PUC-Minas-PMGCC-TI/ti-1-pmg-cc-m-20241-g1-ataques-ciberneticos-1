@@ -26,6 +26,34 @@ function checkLogin() {
     }
 }
 
+// Função para limpar dados de login
+function clearLoginData() {
+    localStorage.removeItem('token');
+    localStorage.removeItem('userLogado');
+    localStorage.removeItem('loginChecked');
+}
+
+// Função para pingar o servidor
+function pingServer() {
+    fetch('/ping')
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Server not responding');
+            }
+            setTimeout(pingServer, 5000); // Tentar novamente após 5 segundos
+        })
+        .catch(error => {
+            console.error('Ping failed, clearing login data:', error);
+            clearLoginData();
+        });
+}
+
+// Adiciona evento ao carregar a página
+window.addEventListener('load', () => {
+    checkLogin();
+    pingServer(); // Inicia o ping no servidor
+});
+
 // Função para carregar as notícias após o login
 function loadNews() {
     const noticiasContainer = document.querySelector('.row');
