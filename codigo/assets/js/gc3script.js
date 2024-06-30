@@ -10,14 +10,12 @@ document.getElementById('gc-send-name').addEventListener('click', function() {
 
 function createDeleteButton() {
     const deleteButton = document.createElement('button');
-
-        deleteButton.innerHTML = '<i class="fa-solid fa-trash"></i>';
-        deleteButton.classList.add('delete-password');
-        deleteButton.style.background = "none";
-        deleteButton.style.padding = "5px 10px";
-        deleteButton.style.cursor = "pointer";  
-        deleteButton.style.border = "none";
-
+    deleteButton.innerHTML = '<i class="fa-solid fa-trash"></i>';
+    deleteButton.classList.add('delete-password');
+    deleteButton.style.background = "none";
+    deleteButton.style.padding = "5px 10px";
+    deleteButton.style.cursor = "pointer";  
+    deleteButton.style.border = "none";
     return deleteButton;
 }
 
@@ -28,15 +26,14 @@ document.getElementById('gc-send-login').addEventListener('click', function() {
         const li = document.createElement('li');
         const textContainer = document.createElement('div');
         textContainer.innerHTML = nome + "<br>" + senha;
-
         li.appendChild(textContainer);
-            li.style.border = "2px solid #000";
-            li.style.padding = "10px";
-            li.style.margin = "5px 0";
-            li.style.borderRadius = "5px";
-            li.style.display = "flex";
-            li.style.justifyContent = "space-between";
-            li.style.alignItems = "center";
+        li.style.border = "2px solid #000";
+        li.style.padding = "10px";
+        li.style.margin = "5px 0";
+        li.style.borderRadius = "5px";
+        li.style.display = "flex";
+        li.style.justifyContent = "space-between";
+        li.style.alignItems = "center";
 
         const deleteButton = createDeleteButton();
         deleteButton.style.marginLeft = "20px";
