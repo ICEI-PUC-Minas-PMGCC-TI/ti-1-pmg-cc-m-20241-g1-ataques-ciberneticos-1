@@ -61,7 +61,6 @@
     </style>
 </head>
 
-
 <body class="Iago2">
     <!-- Cabeçalho -->
     <header id="global-header">
@@ -72,16 +71,12 @@
             <div class="global-nav-list">
                 <ul>
                     <li class="global-nav-item"><a href="licoes.html" class="global-nav-link">Lições</a></li>
-                    
                     <li class="global-nav-item"><a href="gc3index.html" class="global-nav-link">Gerenciador de Senha</a></li>
                     <li class="global-nav-item"><a href="indexVerficador.html" class="global-nav-link">Verificador de Links</a></li>
                     <li class="global-nav-item"><a href="chatbot.html" class="global-nav-link">Chatbot</a></li>
                 </ul>
             </div>
-            <div class="global-login-button">
-                
-            </div>
-
+            <div class="global-login-button"></div>
             <div class="global-mobile-menu-icon">
                 <button onclick="menuShow()"><img class="global-icon" src="images/menu_white_36dp.svg" alt=""></button>
             </div>
@@ -94,45 +89,44 @@
                 <li class="global-nav-item"><a href="indexVerficador.html" class="global-nav-link">Verificador de Links</a></li>
                 <li class="global-nav-item"><a href="chatbot.html" class="global-nav-link">Chatbot</a></li>
             </ul>
-
             <div class="global-login-button">
                 <button><a href="cadastro.html">Entrar</a></button>
             </div>
         </div>
     </header>
-<main>
-    <div class="custom-container">
-        <header>Verificador de senha</header>
-        <form action="#">
-            <div class="field-container">
-                <input onkeyup="validatePassword()" type="password" placeholder="Digite uma senha" />
-                <span class="showBtn">MOSTRAR</span>
-            </div>
-            <div class="strength-indicator">
-                <span class="weak"></span>
-                <span class="medium"></span>
-                <span class="strong"></span>
-            </div>
-            <div class="strength-text"></div>
-        </form>
-    </div>
+
+    <main>
+        <div class="custom-container">
+            <header>Verificador de senha</header>
+            <form action="#">
+                <div class="field-container">
+                    <input onkeyup="validatePassword()" type="password" placeholder="Digite uma senha" />
+                    <span class="showBtn">MOSTRAR</span>
+                </div>
+                <div class="strength-indicator">
+                    <span class="weak"></span>
+                    <span class="medium"></span>
+                    <span class="strong"></span>
+                </div>
+                <div class="strength-text"></div>
+            </form>
+        </div>
+    </main>
+    
     <footer id="global-footer">
         <div class="global-conteudo-footer">
             <a class="global-links-footer" href="licoes.html">Lições</a>
-            
             <a class="global-links-footer" href="gc3index.html">Gerenciador De Senhas</a>
             <a class="global-links-footer" href="indexVerficador.html">Verificação De Links</a>
             <a class="global-links-footer" href="chatbot.html">Chatbot</a>
-            
         </div>
-        
         <div class="global-titulo-footer">
             <p id="copy">
                 © 2024 NetGuard Inc. Todos os Direitos Reservados. Duvidas? Use o email suportenetguard@gmail.com
             </p>
         </div>
-    </main>
     </footer>
+    
     <script src="../assets/js/scriptVerificadorSenha.js"></script>
     <script src="../assets/js/global.js"></script>
 </body>
