@@ -13,7 +13,7 @@ function checkLogin() {
         // Usuário não está logado, redireciona para página de login
         alert("Você precisa estar logado para acessar essa página");
         setTimeout(() => {
-            window.location.href = '../../pages/signin.html';
+            window.location.href = 'pages/signin.html';
         }, 1000);
     } else {
         // Usuário está logado
