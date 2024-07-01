@@ -11,7 +11,7 @@ async function verifyLink() {
     let isTrusted = false;
     let found = false; // Variável para indicar se a URL foi encontrada no JSON
     try {
-        const response = await fetch('../assets/js/urlsVerificador.json');
+        const response = await fetch('urls.json');
         const data = await response.json();
         const { urls } = data;
         found = urls.some(item => {
