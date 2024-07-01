@@ -1,6 +1,6 @@
 cff-version: 1.0.1
 message: Please cite this software using these metadata.
-title: 
+title: Ataques cibernéticos
 authors:
   - family-names: Carvalho de Souza
     given-names: Gabriel
@@ -31,7 +31,7 @@ authors:
 keywords:
   - cybersecurity
   - passwords
-repository-code: 
+repository-code: https://github.com/ICEI-PUC-Minas-PMGCC-TI/ti-1-pmg-cc-m-20241-g1-ataques-ciberneticos-1
 license: CC-BY-4.0
 version: 1.0.0
 date-released: 2022-07-14
